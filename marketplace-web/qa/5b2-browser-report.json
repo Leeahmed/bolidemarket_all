@@ -1,0 +1,226 @@
+{
+  "checks": [
+    "Guard + query de retour PASS",
+    "Connexion session réelle PASS",
+    "Restauration sans token local PASS",
+    "Favori persistant ajout/retrait et restauration PASS",
+    "Devis + calendrier + réservation API réelle + paiement CARD_DEMO sans carte PASS",
+    "Annulation API + dialogue clavier/Escape PASS",
+    "Achat API réelle et confirmation pending PASS",
+    "SOLD CTA désactivé PASS",
+    "Déconnexion et protection PASS"
+  ],
+  "responsive": [
+    {
+      "path": "/login",
+      "width": 1920,
+      "result": "PASS"
+    },
+    {
+      "path": "/register",
+      "width": 1920,
+      "result": "PASS"
+    },
+    {
+      "path": "/login",
+      "width": 1440,
+      "result": "PASS"
+    },
+    {
+      "path": "/register",
+      "width": 1440,
+      "result": "PASS"
+    },
+    {
+      "path": "/login",
+      "width": 1366,
+      "result": "PASS"
+    },
+    {
+      "path": "/register",
+      "width": 1366,
+      "result": "PASS"
+    },
+    {
+      "path": "/login",
+      "width": 1024,
+      "result": "PASS"
+    },
+    {
+      "path": "/register",
+      "width": 1024,
+      "result": "PASS"
+    },
+    {
+      "path": "/login",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "path": "/register",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "path": "/login",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "path": "/register",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "path": "account",
+      "width": 1920,
+      "result": "PASS"
+    },
+    {
+      "path": "reserve",
+      "width": 1920,
+      "result": "PASS"
+    },
+    {
+      "path": "buy",
+      "width": 1920,
+      "result": "PASS"
+    },
+    {
+      "path": "favorites",
+      "width": 1920,
+      "result": "PASS"
+    },
+    {
+      "path": "profile",
+      "width": 1920,
+      "result": "PASS"
+    },
+    {
+      "path": "account",
+      "width": 1440,
+      "result": "PASS"
+    },
+    {
+      "path": "reserve",
+      "width": 1440,
+      "result": "PASS"
+    },
+    {
+      "path": "buy",
+      "width": 1440,
+      "result": "PASS"
+    },
+    {
+      "path": "favorites",
+      "width": 1440,
+      "result": "PASS"
+    },
+    {
+      "path": "profile",
+      "width": 1440,
+      "result": "PASS"
+    },
+    {
+      "path": "account",
+      "width": 1366,
+      "result": "PASS"
+    },
+    {
+      "path": "reserve",
+      "width": 1366,
+      "result": "PASS"
+    },
+    {
+      "path": "buy",
+      "width": 1366,
+      "result": "PASS"
+    },
+    {
+      "path": "favorites",
+      "width": 1366,
+      "result": "PASS"
+    },
+    {
+      "path": "profile",
+      "width": 1366,
+      "result": "PASS"
+    },
+    {
+      "path": "account",
+      "width": 1024,
+      "result": "PASS"
+    },
+    {
+      "path": "reserve",
+      "width": 1024,
+      "result": "PASS"
+    },
+    {
+      "path": "buy",
+      "width": 1024,
+      "result": "PASS"
+    },
+    {
+      "path": "favorites",
+      "width": 1024,
+      "result": "PASS"
+    },
+    {
+      "path": "profile",
+      "width": 1024,
+      "result": "PASS"
+    },
+    {
+      "path": "account",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "path": "reserve",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "path": "buy",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "path": "favorites",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "path": "profile",
+      "width": 768,
+      "result": "PASS"
+    },
+    {
+      "path": "account",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "path": "reserve",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "path": "buy",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "path": "favorites",
+      "width": 390,
+      "result": "PASS"
+    },
+    {
+      "path": "profile",
+      "width": 390,
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

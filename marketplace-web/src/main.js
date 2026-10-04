@@ -1,0 +1,10 @@
+import { createApp } from 'vue'
+import '@fontsource-variable/inter'
+import '@fontsource-variable/sora'
+import './styles/tokens.css'
+import './styles/main.css'
+import './styles/account.css'
+import './styles/polish.css'
+import App from './App.vue'
+import { router } from './router'
+createApp(App).use(router).mount('#app')

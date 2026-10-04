@@ -1,0 +1,132 @@
+{
+  "checks": [
+    "Inscription client / connexion / aucun blocage email démo",
+    "Profil / localisation / avatar multipart / header et sidebar",
+    "Marketplace CTA / défaut CI / France EUR / tous les pays",
+    "Déconnexion serveur et redirection",
+    "Onboarding Pro 4 étapes / logo / rôle merchant / boutique française EUR / approuvée démo"
+  ],
+  "responsive": [
+    {
+      "path": "/login",
+      "width": 1920
+    },
+    {
+      "path": "/register",
+      "width": 1920
+    },
+    {
+      "path": "/pro/register",
+      "width": 1920
+    },
+    {
+      "path": "/login",
+      "width": 1440
+    },
+    {
+      "path": "/register",
+      "width": 1440
+    },
+    {
+      "path": "/pro/register",
+      "width": 1440
+    },
+    {
+      "path": "/login",
+      "width": 1366
+    },
+    {
+      "path": "/register",
+      "width": 1366
+    },
+    {
+      "path": "/pro/register",
+      "width": 1366
+    },
+    {
+      "path": "/login",
+      "width": 1024
+    },
+    {
+      "path": "/register",
+      "width": 1024
+    },
+    {
+      "path": "/pro/register",
+      "width": 1024
+    },
+    {
+      "path": "/login",
+      "width": 768
+    },
+    {
+      "path": "/register",
+      "width": 768
+    },
+    {
+      "path": "/pro/register",
+      "width": 768
+    },
+    {
+      "path": "/login",
+      "width": 390
+    },
+    {
+      "path": "/register",
+      "width": 390
+    },
+    {
+      "path": "/pro/register",
+      "width": 390
+    },
+    {
+      "path": "/account",
+      "width": 1920
+    },
+    {
+      "path": "/account/profile",
+      "width": 1920
+    },
+    {
+      "path": "/account",
+      "width": 1440
+    },
+    {
+      "path": "/account/profile",
+      "width": 1440
+    },
+    {
+      "path": "/account",
+      "width": 1366
+    },
+    {
+      "path": "/account/profile",
+      "width": 1366
+    },
+    {
+      "path": "/account",
+      "width": 1024
+    },
+    {
+      "path": "/account/profile",
+      "width": 1024
+    },
+    {
+      "path": "/account",
+      "width": 768
+    },
+    {
+      "path": "/account/profile",
+      "width": 768
+    },
+    {
+      "path": "/account",
+      "width": 390
+    },
+    {
+      "path": "/account/profile",
+      "width": 390
+    }
+  ],
+  "errors": []
+}

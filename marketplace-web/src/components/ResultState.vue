@@ -1,0 +1,5 @@
+<script setup>
+defineProps({ state: String, error: Object, empty: Boolean, noun: { type: String, default: 'véhicule' } })
+defineEmits(['retry', 'reset'])
+</script>
+<template><div v-if="state === 'loading'" class="vehicle-grid" role="status" aria-label="Chargement"><div v-for="n in 6" :key="n" class="skeleton-card"><div /><span /><span /><span /></div><span class="sr-only">Chargement en cours…</span></div><div v-else-if="state === 'error'" class="empty-state" role="alert"><h2>{{ error?.status === 404 ? 'Page introuvable' : 'Le catalogue est indisponible' }}</h2><p>{{ error?.message }}</p><ul v-if="Object.keys(error?.fields || {}).length"><li v-for="(messages, field) in error.fields" :key="field">{{ Array.isArray(messages) ? messages.join(' ') : messages }}</li></ul><button class="button" @click="$emit('retry')">Réessayer</button></div><div v-else-if="empty" class="empty-state" role="status"><h2>Aucun {{ noun }} ne correspond à vos critères.</h2><p>Essayez une autre recherche ou élargissez votre localisation.</p><button class="button" @click="$emit('reset')">Réinitialiser les filtres</button></div><slot v-else /></template>

@@ -1,0 +1,13 @@
+<script setup>
+import { ref, computed, onBeforeUnmount, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { auth, login, safeDestination, restoreAuth } from '../stores/auth'
+import { config } from '../config'
+import FormError from '../components/FormError.vue'
+const router=useRouter(),route=useRoute(),email=ref(''),password=ref(''),busy=ref(false),error=ref(null)
+const refused=computed(()=>auth.user && auth.user.role!=='merchant')
+let timer
+watch(refused,value=>{clearTimeout(timer);if(value)timer=setTimeout(()=>window.location.assign(config.marketplaceUrl+'/account'),3500)},{immediate:true})
+onBeforeUnmount(()=>clearTimeout(timer))
+async function submit(){busy.value=true;error.value=null;try{await login({email:email.value,password:password.value});if(auth.user.role==='merchant')await router.replace(safeDestination(route.query.redirect))}catch(e){error.value=e}finally{busy.value=false}}
+</script><template><main class="login"><section class="login-scene"><a :href="config.landingUrl"><img class="brand" src="/images/logo-horizontal.webp" alt="BolideMarket"/></a><div><p class="eyebrow">BOLIDEMARKET PRO</p><h1>Votre parc.<br/>Votre activité.<br/>Un seul espace.</h1><p>La conduite de votre activité commence ici.</p></div><span>© 2026 BolideMarket</span></section><section class="login-form"><a class="back" :href="config.marketplaceUrl">← Retour à BolideMarket</a><div><p class="eyebrow">ESPACE PROFESSIONNEL</p><h2>BolideMarket <span class="accent">Pro</span></h2><p class="lead">Pilotez votre activité automobile depuis un seul espace.</p><div v-if="refused" class="notice" role="alert">Cet espace est réservé aux professionnels. Redirection vers votre compte marketplace… <a :href="config.marketplaceUrl+'/account'">Ouvrir mon compte</a></div><template v-else><FormError :error="error || auth.error"/><button v-if="auth.error" class="button secondary" @click="restoreAuth(true)">Réessayer la connexion</button><form @submit.prevent="submit"><label>Adresse e-mail<input v-model="email" type="email" required autocomplete="username"/></label><label>Mot de passe<input v-model="password" type="password" required autocomplete="current-password"/></label><a :href="config.marketplaceUrl+'/forgot-password'">Mot de passe oublié ?</a><button class="button wide" :disabled="busy">{{ busy?'Connexion…':'Accéder à mon espace' }} →</button></form><p>Vous débutez sur BolideMarket ? <a :href="config.marketplaceUrl+'/pro/register'">Créer un compte professionnel</a></p></template></div><p class="muted">Achetez. Louez. Roulez.</p></section></main></template>

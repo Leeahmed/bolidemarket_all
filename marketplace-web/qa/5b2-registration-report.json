@@ -1,0 +1,8 @@
+{
+  "email": "qa-5b2-1790559660328@bolidemarket.demo",
+  "checks": [
+    "Inscription API réelle : CLIENT uniquement, sans connexion automatique PASS",
+    "Profil réel non vérifié et état favoris vide PASS",
+    "Déconnexion du compte de test PASS"
+  ]
+}

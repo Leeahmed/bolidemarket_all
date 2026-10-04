@@ -1,0 +1,6 @@
+<script setup>
+import { ref } from 'vue'
+const message = ref('')
+</script>
+<template><section id="application" class="container mobile-section marketing-split"><div class="marketing-copy" data-reveal><h2>Tout le marché automobile dans votre poche<span class="accent">.</span></h2><p>Recherchez, comparez et contactez des professionnels, où que vous soyez.</p><div class="store-buttons"><button aria-label="App Store — application à venir" @click="message = 'L’application iOS sera disponible prochainement.'"><img src="/images/app-store.webp" alt="App Store" width="272" height="87" loading="lazy" /></button><button aria-label="Google Play — application à venir" @click="message = 'L’application Android sera disponible prochainement.'"><img src="/images/google-play.webp" alt="Google Play" width="281" height="87" loading="lazy" /></button></div><p class="demo-note align-left" role="status">{{ message || 'Application en préparation · boutons de démonstration.' }}</p></div><figure class="mobile-mockup" data-reveal data-parallax><img src="/images/mobile-preview.webp" width="855" height="946" alt="Deux smartphones présentant les écrans validés de l’application BolideMarket." loading="lazy" /><figcaption>Aperçu de l’application</figcaption></figure></section></template>
+

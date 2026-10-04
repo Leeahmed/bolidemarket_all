@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "vehicle": "24",
+  "shop": "13",
+  "reservation": "5",
+  "order": "5",
+  "errors": [],
+  "stages": [
+    "create BOTH",
+    "WebP upload",
+    "publish",
+    "edit price",
+    "main image",
+    "delete image",
+    "status other/available",
+    "reservation confirm/cancel DEMO",
+    "sale confirm/cancel DEMO",
+    "derived clients",
+    "shop hours/logo/cover persisted",
+    "public shop rendered",
+    "soft deletion",
+    "logout",
+    "customer refusal and redirect"
+  ],
+  "note": "Parcours initial puis reprise sur le même compte QA après attente complète des requêtes boutique."
+}

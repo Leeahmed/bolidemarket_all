@@ -1,0 +1,10 @@
+:root {
+  --carbon: #0b0d0f; --ivory: #f5f3ee; --orange: #e85d2a; --graphite: #25282d;
+  --muted: #64666c; --muted-light: #bbbfc3; --line: #dededb; --line-dark: #45484b; --white: #fff;
+  --font-display: 'Sora Variable', sans-serif; --font-body: 'Inter Variable', sans-serif;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px; --space-24: 96px;
+  --radius: 6px; --shadow: 0 4px 16px rgb(11 13 15 / 6%);
+  --container: 1440px; --gutter: clamp(24px, 4.6vw, 88px); --header-height: 96px;
+  --h1: clamp(36px, 4.05vw, 64px); --h2: clamp(28px, 2.55vw, 40px);
+  /* Breakpoint conventions: 1366 compact desktop, 1100 navigation, 1024/768 tablet, 600 mobile. */
+}

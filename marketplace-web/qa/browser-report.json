@@ -1,0 +1,97 @@
+{
+  "viewports": [
+    {
+      "width": 1920,
+      "page": "catalog",
+      "result": "PASS"
+    },
+    {
+      "width": 1920,
+      "page": "vehicle",
+      "result": "PASS"
+    },
+    {
+      "width": 1920,
+      "page": "shop",
+      "result": "PASS"
+    },
+    {
+      "width": 1440,
+      "page": "catalog",
+      "result": "PASS"
+    },
+    {
+      "width": 1440,
+      "page": "vehicle",
+      "result": "PASS"
+    },
+    {
+      "width": 1440,
+      "page": "shop",
+      "result": "PASS"
+    },
+    {
+      "width": 1366,
+      "page": "catalog",
+      "result": "PASS"
+    },
+    {
+      "width": 1366,
+      "page": "vehicle",
+      "result": "PASS"
+    },
+    {
+      "width": 1366,
+      "page": "shop",
+      "result": "PASS"
+    },
+    {
+      "width": 1024,
+      "page": "catalog",
+      "result": "PASS"
+    },
+    {
+      "width": 1024,
+      "page": "vehicle",
+      "result": "PASS"
+    },
+    {
+      "width": 1024,
+      "page": "shop",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "page": "catalog",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "page": "vehicle",
+      "result": "PASS"
+    },
+    {
+      "width": 768,
+      "page": "shop",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "page": "catalog",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "page": "vehicle",
+      "result": "PASS"
+    },
+    {
+      "width": 390,
+      "page": "shop",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "interactions": "PASS"
+}

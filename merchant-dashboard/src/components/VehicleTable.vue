@@ -1,0 +1,8 @@
+<script setup>
+import SafeImage from './SafeImage.vue'
+import VehicleActions from './VehicleActions.vue'
+import { formatMoney,locationLabel } from '../utils/format'
+import { vehicleMedia } from '../utils/demoMedia'
+import { labels,offerLabel,date } from '../utils/pro'
+defineProps({vehicles:Array,compact:Boolean});defineEmits(['reload'])
+</script><template><div v-if="!vehicles?.length" class="empty"><h3>Aucun véhicule pour le moment.</h3><p>Ajoutez votre premier véhicule pour commencer à apparaître sur BolideMarket.</p><RouterLink class="button" to="/vehicles/create">Ajouter mon premier véhicule</RouterLink></div><div v-else class="table-wrap"><table><thead><tr><th>Véhicule</th><th>Offre / Prix</th><th v-if="!compact">Localisation</th><th>Statut</th><th v-if="!compact">Publication</th><th>Date</th><th>Actions</th></tr></thead><tbody><tr v-for="v in vehicles" :key="v.id"><td><div class="vehicle-cell"><SafeImage :src="vehicleMedia(v).src" :alt="v.title"/><div><RouterLink :to="'/vehicles/'+v.id"><strong>{{ v.title }}</strong></RouterLink><small>{{ v.year }} · {{ v.reference }}</small></div></div></td><td><small>{{ offerLabel(v) }}</small><strong v-if="v.sale_price" class="price">{{ formatMoney(v.sale_price) }}</strong><strong v-if="v.rental_daily_price" class="price">{{ formatMoney(v.rental_daily_price) }} / jour</strong></td><td v-if="!compact">{{ locationLabel(v.location) }}</td><td><span class="badge" :class="v.inventory_status">{{ labels[v.inventory_status] }}</span></td><td v-if="!compact"><span class="badge">{{ labels[v.publication_status] }}</span></td><td class="nowrap">{{ date(v.created_at) }}</td><td><VehicleActions :vehicle="v" @updated="$emit('reload')" @deleted="$emit('reload')"/></td></tr></tbody></table></div></template>

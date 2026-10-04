@@ -1,0 +1,4576 @@
+{
+  "models": {
+    "data": [
+      {
+        "id": "2",
+        "brand_id": "1",
+        "name": "Corolla"
+      },
+      {
+        "id": "3",
+        "brand_id": "1",
+        "name": "Land Cruiser"
+      },
+      {
+        "id": "1",
+        "brand_id": "1",
+        "name": "RAV4"
+      },
+      {
+        "id": "4",
+        "brand_id": "2",
+        "name": "208"
+      },
+      {
+        "id": "5",
+        "brand_id": "2",
+        "name": "308"
+      },
+      {
+        "id": "6",
+        "brand_id": "3",
+        "name": "C300"
+      },
+      {
+        "id": "7",
+        "brand_id": "3",
+        "name": "Classe S"
+      },
+      {
+        "id": "9",
+        "brand_id": "4",
+        "name": "Clio"
+      },
+      {
+        "id": "8",
+        "brand_id": "4",
+        "name": "Kangoo"
+      },
+      {
+        "id": "10",
+        "brand_id": "4",
+        "name": "Zoe"
+      },
+      {
+        "id": "11",
+        "brand_id": "5",
+        "name": "Model 3"
+      },
+      {
+        "id": "12",
+        "brand_id": "6",
+        "name": "Sportage"
+      },
+      {
+        "id": "13",
+        "brand_id": "7",
+        "name": "Golf"
+      },
+      {
+        "id": "14",
+        "brand_id": "8",
+        "name": "Série 3"
+      },
+      {
+        "id": "15",
+        "brand_id": "9",
+        "name": "Transit"
+      },
+      {
+        "id": "16",
+        "brand_id": "10",
+        "name": "Tucson"
+      },
+      {
+        "id": "17",
+        "brand_id": "11",
+        "name": "Cooper"
+      },
+      {
+        "id": "18",
+        "brand_id": "12",
+        "name": "911"
+      }
+    ]
+  },
+  "currencies": {
+    "data": [
+      {
+        "code": "CAD",
+        "minor_unit": 2,
+        "active": true
+      },
+      {
+        "code": "EUR",
+        "minor_unit": 2,
+        "active": true
+      },
+      {
+        "code": "XOF",
+        "minor_unit": 0,
+        "active": true
+      }
+    ]
+  },
+  "vehicle": {
+    "data": {
+      "id": "17",
+      "reference": "BM-CI-DEMO-017",
+      "slug": "porsche-911-2024-bm-ci-demo-017",
+      "title": "Porsche 911",
+      "brand": {
+        "id": "12",
+        "name": "Porsche",
+        "slug": "porsche"
+      },
+      "model": {
+        "id": "18",
+        "brand_id": "12",
+        "name": "911"
+      },
+      "trim": null,
+      "year": 2024,
+      "condition": "used",
+      "category": {
+        "id": "5",
+        "slug": "sport",
+        "label": "Sport"
+      },
+      "offer_types": [
+        "sale"
+      ],
+      "sale_price": {
+        "amount_minor": "55000000",
+        "currency": "XOF",
+        "minor_unit": 0,
+        "unit": null
+      },
+      "rental_daily_price": null,
+      "mileage_km": 34000,
+      "fuel": "petrol",
+      "transmission": "automatic",
+      "engine": null,
+      "horsepower": null,
+      "doors": 5,
+      "seats": 5,
+      "color": "Jaune",
+      "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+      "publication_status": "published",
+      "inventory_status": "rented",
+      "is_available_now": false,
+      "future_availability": null,
+      "distance_km": null,
+      "is_featured": false,
+      "is_certified": false,
+      "published_at": "2026-09-25T21:10:57Z",
+      "images": [
+        {
+          "id": "17",
+          "url": "http://127.0.0.1:8000/storage/vehicles/17/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        }
+      ],
+      "primary_image": {
+        "id": "17",
+        "url": "http://127.0.0.1:8000/storage/vehicles/17/demo-placeholder.svg",
+        "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+        "position": 0,
+        "is_primary": true,
+        "is_placeholder": true
+      },
+      "features": [
+        {
+          "id": "1",
+          "slug": "climatisation",
+          "label": "Climatisation"
+        },
+        {
+          "id": "2",
+          "slug": "bluetooth",
+          "label": "Bluetooth"
+        },
+        {
+          "id": "3",
+          "slug": "camera-de-recul",
+          "label": "Caméra de recul"
+        }
+      ],
+      "shop": {
+        "id": "2",
+        "name": "Cocody Auto Selection",
+        "slug": "cocody-auto-selection-demo",
+        "description": "Boutique fictive — données de démonstration.",
+        "email": null,
+        "phone": null,
+        "address": "Adresse de démonstration",
+        "timezone": "Africa/Abidjan",
+        "status": "published",
+        "currency": {
+          "code": "XOF",
+          "minor_unit": 0,
+          "active": true
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "1",
+            "city_id": "1",
+            "name": "Cocody",
+            "slug": "cocody",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": null,
+          "longitude": null
+        },
+        "merchant": {
+          "id": "2",
+          "display_name": "Cocody Auto Selection",
+          "is_verified": false
+        },
+        "is_demo": true,
+        "demo_notice": "Boutique et données de démonstration."
+      },
+      "location": {
+        "country": {
+          "code": "CI",
+          "name": "Côte d’Ivoire",
+          "currency_code": "XOF",
+          "currency_symbol": "FCFA",
+          "phone_code": "+225",
+          "active": true
+        },
+        "city": {
+          "id": "1",
+          "country_code": "CI",
+          "name": "Abidjan",
+          "slug": "abidjan",
+          "latitude": null,
+          "longitude": null,
+          "active": true
+        },
+        "district": {
+          "id": "9",
+          "city_id": "1",
+          "name": "Bingerville",
+          "slug": "bingerville",
+          "latitude": null,
+          "longitude": null,
+          "active": true
+        },
+        "latitude": "5.3600000",
+        "longitude": "-3.8850000"
+      },
+      "is_demo": true,
+      "demo_notice": "Véhicule, prix et données de démonstration."
+    }
+  },
+  "vehicles": {
+    "data": [
+      {
+        "id": "17",
+        "reference": "BM-CI-DEMO-017",
+        "slug": "porsche-911-2024-bm-ci-demo-017",
+        "title": "Porsche 911",
+        "brand": {
+          "id": "12",
+          "name": "Porsche",
+          "slug": "porsche"
+        },
+        "model": {
+          "id": "18",
+          "brand_id": "12",
+          "name": "911"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "5",
+          "slug": "sport",
+          "label": "Sport"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "55000000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 34000,
+        "fuel": "petrol",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Jaune",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "rented",
+        "is_available_now": false,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "17",
+            "url": "http://127.0.0.1:8000/storage/vehicles/17/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "17",
+          "url": "http://127.0.0.1:8000/storage/vehicles/17/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          }
+        ],
+        "shop": {
+          "id": "2",
+          "name": "Cocody Auto Selection",
+          "slug": "cocody-auto-selection-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "2",
+            "display_name": "Cocody Auto Selection",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "9",
+            "city_id": "1",
+            "name": "Bingerville",
+            "slug": "bingerville",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3600000",
+          "longitude": "-3.8850000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "16",
+        "reference": "BM-CI-DEMO-016",
+        "slug": "bmw-serie-3-2024-bm-ci-demo-016",
+        "title": "BMW Série 3",
+        "brand": {
+          "id": "8",
+          "name": "BMW",
+          "slug": "bmw"
+        },
+        "model": {
+          "id": "14",
+          "brand_id": "8",
+          "name": "Série 3"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "2",
+          "slug": "sedan",
+          "label": "Berline"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "19500000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 32500,
+        "fuel": "diesel",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Bordeaux",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "sold",
+        "is_available_now": false,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "16",
+            "url": "http://127.0.0.1:8000/storage/vehicles/16/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "16",
+          "url": "http://127.0.0.1:8000/storage/vehicles/16/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          }
+        ],
+        "shop": {
+          "id": "1",
+          "name": "Abidjan Prestige Motors",
+          "slug": "abidjan-prestige-motors-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "1",
+            "display_name": "BolideMarket Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "4",
+            "city_id": "1",
+            "name": "Plateau",
+            "slug": "plateau",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3250000",
+          "longitude": "-4.0200000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "15",
+        "reference": "BM-FR-DEMO-015",
+        "slug": "renault-zoe-2024-bm-fr-demo-015",
+        "title": "Renault Zoe",
+        "brand": {
+          "id": "4",
+          "name": "Renault",
+          "slug": "renault"
+        },
+        "model": {
+          "id": "10",
+          "brand_id": "4",
+          "name": "Zoe"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "3",
+          "slug": "city",
+          "label": "Citadine"
+        },
+        "offer_types": [
+          "rent"
+        ],
+        "sale_price": null,
+        "rental_daily_price": {
+          "amount_minor": "6500",
+          "currency": "EUR",
+          "minor_unit": 2,
+          "unit": "day"
+        },
+        "mileage_km": 31000,
+        "fuel": "electric",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Bleu",
+        "description": "Véhicule fictif. Photos et prix de démonstration.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "15",
+            "url": "http://127.0.0.1:8000/storage/vehicles/15/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "15",
+          "url": "http://127.0.0.1:8000/storage/vehicles/15/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          },
+          {
+            "id": "4",
+            "slug": "gps",
+            "label": "GPS"
+          }
+        ],
+        "shop": {
+          "id": "5",
+          "name": "Paris Mobilité Démo",
+          "slug": "paris-mobilite-demo-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Europe/Paris",
+          "status": "published",
+          "currency": {
+            "code": "EUR",
+            "minor_unit": 2,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "FR",
+              "name": "France",
+              "currency_code": "EUR",
+              "currency_symbol": "€",
+              "phone_code": "+33",
+              "active": true
+            },
+            "city": {
+              "id": "5",
+              "country_code": "FR",
+              "name": "Paris",
+              "slug": "paris",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": null,
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "5",
+            "display_name": "Paris Mobilité Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "FR",
+            "name": "France",
+            "currency_code": "EUR",
+            "currency_symbol": "€",
+            "phone_code": "+33",
+            "active": true
+          },
+          "city": {
+            "id": "5",
+            "country_code": "FR",
+            "name": "Paris",
+            "slug": "paris",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": "48.8566000",
+          "longitude": "2.3522000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "14",
+        "reference": "BM-CI-DEMO-014",
+        "slug": "mini-cooper-2024-bm-ci-demo-014",
+        "title": "Mini Cooper",
+        "brand": {
+          "id": "11",
+          "name": "Mini",
+          "slug": "mini"
+        },
+        "model": {
+          "id": "17",
+          "brand_id": "11",
+          "name": "Cooper"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "3",
+          "slug": "city",
+          "label": "Citadine"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "11000000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 29500,
+        "fuel": "petrol",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Vert",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "other",
+        "is_available_now": false,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "14",
+            "url": "http://127.0.0.1:8000/storage/vehicles/14/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "14",
+          "url": "http://127.0.0.1:8000/storage/vehicles/14/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          }
+        ],
+        "shop": {
+          "id": "4",
+          "name": "Ivoire Premium Auto",
+          "slug": "ivoire-premium-auto-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "4",
+            "display_name": "Ivoire Premium Auto",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "2",
+            "city_id": "1",
+            "name": "Marcory",
+            "slug": "marcory",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3100000",
+          "longitude": "-3.9900000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "13",
+        "reference": "BM-CI-DEMO-013",
+        "slug": "hyundai-tucson-2024-bm-ci-demo-013",
+        "title": "Hyundai Tucson",
+        "brand": {
+          "id": "10",
+          "name": "Hyundai",
+          "slug": "hyundai"
+        },
+        "model": {
+          "id": "16",
+          "brand_id": "10",
+          "name": "Tucson"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "1",
+          "slug": "suv",
+          "label": "SUV"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "23000000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 28000,
+        "fuel": "hybrid",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Bleu",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "13",
+            "url": "http://127.0.0.1:8000/storage/vehicles/13/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "13",
+          "url": "http://127.0.0.1:8000/storage/vehicles/13/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          }
+        ],
+        "shop": {
+          "id": "3",
+          "name": "Lagune Rent Cars",
+          "slug": "lagune-rent-cars-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "2",
+              "city_id": "1",
+              "name": "Marcory",
+              "slug": "marcory",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "3",
+            "display_name": "Lagune Rent Cars",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "1",
+            "city_id": "1",
+            "name": "Cocody",
+            "slug": "cocody",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3649000",
+          "longitude": "-4.0083000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "12",
+        "reference": "BM-CI-DEMO-012",
+        "slug": "ford-transit-2024-bm-ci-demo-012",
+        "title": "Ford Transit",
+        "brand": {
+          "id": "9",
+          "name": "Ford",
+          "slug": "ford"
+        },
+        "model": {
+          "id": "15",
+          "brand_id": "9",
+          "name": "Transit"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "7",
+          "slug": "utility",
+          "label": "Utilitaire"
+        },
+        "offer_types": [
+          "rent"
+        ],
+        "sale_price": null,
+        "rental_daily_price": {
+          "amount_minor": "55000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": "day"
+        },
+        "mileage_km": 26500,
+        "fuel": "diesel",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Blanc",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "12",
+            "url": "http://127.0.0.1:8000/storage/vehicles/12/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "12",
+          "url": "http://127.0.0.1:8000/storage/vehicles/12/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          },
+          {
+            "id": "4",
+            "slug": "gps",
+            "label": "GPS"
+          }
+        ],
+        "shop": {
+          "id": "2",
+          "name": "Cocody Auto Selection",
+          "slug": "cocody-auto-selection-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "2",
+            "display_name": "Cocody Auto Selection",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "5",
+            "city_id": "1",
+            "name": "Yopougon",
+            "slug": "yopougon",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3400000",
+          "longitude": "-4.0800000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "11",
+        "reference": "BM-CI-DEMO-011",
+        "slug": "mercedes-benz-classe-s-2024-bm-ci-demo-011",
+        "title": "Mercedes-Benz Classe S",
+        "brand": {
+          "id": "3",
+          "name": "Mercedes-Benz",
+          "slug": "mercedes-benz"
+        },
+        "model": {
+          "id": "7",
+          "brand_id": "3",
+          "name": "Classe S"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "6",
+          "slug": "luxury",
+          "label": "Luxe"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "42000000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 25000,
+        "fuel": "hybrid",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Blanc",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "11",
+            "url": "http://127.0.0.1:8000/storage/vehicles/11/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "11",
+          "url": "http://127.0.0.1:8000/storage/vehicles/11/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          }
+        ],
+        "shop": {
+          "id": "1",
+          "name": "Abidjan Prestige Motors",
+          "slug": "abidjan-prestige-motors-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "1",
+            "display_name": "BolideMarket Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "9",
+            "city_id": "1",
+            "name": "Bingerville",
+            "slug": "bingerville",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3650000",
+          "longitude": "-3.8850000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "10",
+        "reference": "BM-FR-DEMO-010",
+        "slug": "volkswagen-golf-2024-bm-fr-demo-010",
+        "title": "Volkswagen Golf",
+        "brand": {
+          "id": "7",
+          "name": "Volkswagen",
+          "slug": "volkswagen"
+        },
+        "model": {
+          "id": "13",
+          "brand_id": "7",
+          "name": "Golf"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "3",
+          "slug": "city",
+          "label": "Citadine"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "1690000",
+          "currency": "EUR",
+          "minor_unit": 2,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 23500,
+        "fuel": "petrol",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Rouge",
+        "description": "Véhicule fictif. Photos et prix de démonstration.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "10",
+            "url": "http://127.0.0.1:8000/storage/vehicles/10/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "10",
+          "url": "http://127.0.0.1:8000/storage/vehicles/10/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          }
+        ],
+        "shop": {
+          "id": "5",
+          "name": "Paris Mobilité Démo",
+          "slug": "paris-mobilite-demo-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Europe/Paris",
+          "status": "published",
+          "currency": {
+            "code": "EUR",
+            "minor_unit": 2,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "FR",
+              "name": "France",
+              "currency_code": "EUR",
+              "currency_symbol": "€",
+              "phone_code": "+33",
+              "active": true
+            },
+            "city": {
+              "id": "5",
+              "country_code": "FR",
+              "name": "Paris",
+              "slug": "paris",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": null,
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "5",
+            "display_name": "Paris Mobilité Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "FR",
+            "name": "France",
+            "currency_code": "EUR",
+            "currency_symbol": "€",
+            "phone_code": "+33",
+            "active": true
+          },
+          "city": {
+            "id": "5",
+            "country_code": "FR",
+            "name": "Paris",
+            "slug": "paris",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": "48.8566000",
+          "longitude": "2.3522000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "9",
+        "reference": "BM-CI-DEMO-009",
+        "slug": "toyota-land-cruiser-2024-bm-ci-demo-009",
+        "title": "Toyota Land Cruiser",
+        "brand": {
+          "id": "1",
+          "name": "Toyota",
+          "slug": "toyota"
+        },
+        "model": {
+          "id": "3",
+          "brand_id": "1",
+          "name": "Land Cruiser"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "4",
+          "slug": "four_by_four",
+          "label": "4×4"
+        },
+        "offer_types": [
+          "rent"
+        ],
+        "sale_price": null,
+        "rental_daily_price": {
+          "amount_minor": "95000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": "day"
+        },
+        "mileage_km": 22000,
+        "fuel": "diesel",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Sable",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "9",
+            "url": "http://127.0.0.1:8000/storage/vehicles/9/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "9",
+          "url": "http://127.0.0.1:8000/storage/vehicles/9/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          },
+          {
+            "id": "4",
+            "slug": "gps",
+            "label": "GPS"
+          }
+        ],
+        "shop": {
+          "id": "4",
+          "name": "Ivoire Premium Auto",
+          "slug": "ivoire-premium-auto-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "4",
+            "display_name": "Ivoire Premium Auto",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "4",
+            "city_id": "1",
+            "name": "Plateau",
+            "slug": "plateau",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3300000",
+          "longitude": "-4.0200000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "8",
+        "reference": "BM-CI-DEMO-008",
+        "slug": "renault-clio-2024-bm-ci-demo-008",
+        "title": "Renault Clio",
+        "brand": {
+          "id": "4",
+          "name": "Renault",
+          "slug": "renault"
+        },
+        "model": {
+          "id": "9",
+          "brand_id": "4",
+          "name": "Clio"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "3",
+          "slug": "city",
+          "label": "Citadine"
+        },
+        "offer_types": [
+          "sale",
+          "rent"
+        ],
+        "sale_price": {
+          "amount_minor": "8800000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": {
+          "amount_minor": "30000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": "day"
+        },
+        "mileage_km": 20500,
+        "fuel": "petrol",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Orange",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "8",
+            "url": "http://127.0.0.1:8000/storage/vehicles/8/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "8",
+          "url": "http://127.0.0.1:8000/storage/vehicles/8/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          }
+        ],
+        "shop": {
+          "id": "3",
+          "name": "Lagune Rent Cars",
+          "slug": "lagune-rent-cars-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "2",
+              "city_id": "1",
+              "name": "Marcory",
+              "slug": "marcory",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "3",
+            "display_name": "Lagune Rent Cars",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "2",
+            "city_id": "1",
+            "name": "Marcory",
+            "slug": "marcory",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3000000",
+          "longitude": "-3.9900000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "7",
+        "reference": "BM-CI-DEMO-007",
+        "slug": "toyota-corolla-2024-bm-ci-demo-007",
+        "title": "Toyota Corolla",
+        "brand": {
+          "id": "1",
+          "name": "Toyota",
+          "slug": "toyota"
+        },
+        "model": {
+          "id": "2",
+          "brand_id": "1",
+          "name": "Corolla"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "2",
+          "slug": "sedan",
+          "label": "Berline"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "14000000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 19000,
+        "fuel": "hybrid",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Bleu",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:57Z",
+        "images": [
+          {
+            "id": "7",
+            "url": "http://127.0.0.1:8000/storage/vehicles/7/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "7",
+          "url": "http://127.0.0.1:8000/storage/vehicles/7/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          }
+        ],
+        "shop": {
+          "id": "2",
+          "name": "Cocody Auto Selection",
+          "slug": "cocody-auto-selection-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "2",
+            "display_name": "Cocody Auto Selection",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "1",
+            "city_id": "1",
+            "name": "Cocody",
+            "slug": "cocody",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3699000",
+          "longitude": "-4.0083000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "21",
+        "reference": "BM-BE-GEO-BRUXELLES",
+        "slug": "bm-be-geo-bruxelles",
+        "title": "Tesla Model 3",
+        "brand": {
+          "id": "5",
+          "name": "Tesla",
+          "slug": "tesla"
+        },
+        "model": {
+          "id": "11",
+          "brand_id": "5",
+          "name": "Model 3"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "2",
+          "slug": "sedan",
+          "label": "Berline"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "2590000",
+          "currency": "EUR",
+          "minor_unit": 2,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 16000,
+        "fuel": "electric",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Bleu",
+        "description": "Véhicule fictif, prix et position indicative de démonstration.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:56Z",
+        "images": [
+          {
+            "id": "21",
+            "url": "http://127.0.0.1:8000/storage/vehicles/21/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "21",
+          "url": "http://127.0.0.1:8000/storage/vehicles/21/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [],
+        "shop": {
+          "id": "8",
+          "name": "Bruxelles Mobilité Démo",
+          "slug": "bruxelles-mobilite-geo-demo",
+          "description": "Boutique fictive. Position indicative de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Europe/Brussels",
+          "status": "published",
+          "currency": {
+            "code": "EUR",
+            "minor_unit": 2,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "BE",
+              "name": "Belgique",
+              "currency_code": "EUR",
+              "currency_symbol": "€",
+              "phone_code": "+32",
+              "active": true
+            },
+            "city": {
+              "id": "11",
+              "country_code": "BE",
+              "name": "Bruxelles",
+              "slug": "bruxelles",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": null,
+            "latitude": "50.8503000",
+            "longitude": "4.3517000"
+          },
+          "merchant": {
+            "id": "5",
+            "display_name": "Paris Mobilité Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "BE",
+            "name": "Belgique",
+            "currency_code": "EUR",
+            "currency_symbol": "€",
+            "phone_code": "+32",
+            "active": true
+          },
+          "city": {
+            "id": "11",
+            "country_code": "BE",
+            "name": "Bruxelles",
+            "slug": "bruxelles",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": "50.8503000",
+          "longitude": "4.3517000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "20",
+        "reference": "BM-SN-GEO-DAKAR",
+        "slug": "bm-sn-geo-dakar",
+        "title": "Tesla Model 3",
+        "brand": {
+          "id": "5",
+          "name": "Tesla",
+          "slug": "tesla"
+        },
+        "model": {
+          "id": "11",
+          "brand_id": "5",
+          "name": "Model 3"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "2",
+          "slug": "sedan",
+          "label": "Berline"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "16000000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 16000,
+        "fuel": "electric",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Bleu",
+        "description": "Véhicule fictif, prix et position indicative de démonstration.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:56Z",
+        "images": [
+          {
+            "id": "20",
+            "url": "http://127.0.0.1:8000/storage/vehicles/20/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "20",
+          "url": "http://127.0.0.1:8000/storage/vehicles/20/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [],
+        "shop": {
+          "id": "7",
+          "name": "Dakar Mobilité Démo",
+          "slug": "dakar-mobilite-geo-demo",
+          "description": "Boutique fictive. Position indicative de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Dakar",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "SN",
+              "name": "Sénégal",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+221",
+              "active": true
+            },
+            "city": {
+              "id": "10",
+              "country_code": "SN",
+              "name": "Dakar",
+              "slug": "dakar",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": null,
+            "latitude": "14.7167000",
+            "longitude": "-17.4677000"
+          },
+          "merchant": {
+            "id": "5",
+            "display_name": "Paris Mobilité Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "SN",
+            "name": "Sénégal",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+221",
+            "active": true
+          },
+          "city": {
+            "id": "10",
+            "country_code": "SN",
+            "name": "Dakar",
+            "slug": "dakar",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": "14.7167000",
+          "longitude": "-17.4677000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "19",
+        "reference": "BM-FR-GEO-LYON",
+        "slug": "bm-fr-geo-lyon",
+        "title": "Tesla Model 3",
+        "brand": {
+          "id": "5",
+          "name": "Tesla",
+          "slug": "tesla"
+        },
+        "model": {
+          "id": "11",
+          "brand_id": "5",
+          "name": "Model 3"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "2",
+          "slug": "sedan",
+          "label": "Berline"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "2490000",
+          "currency": "EUR",
+          "minor_unit": 2,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 16000,
+        "fuel": "electric",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Bleu",
+        "description": "Véhicule fictif, prix et position indicative de démonstration.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:56Z",
+        "images": [
+          {
+            "id": "19",
+            "url": "http://127.0.0.1:8000/storage/vehicles/19/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "19",
+          "url": "http://127.0.0.1:8000/storage/vehicles/19/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [],
+        "shop": {
+          "id": "6",
+          "name": "Lyon Mobilité Démo",
+          "slug": "lyon-mobilite-geo-demo",
+          "description": "Boutique fictive. Position indicative de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Europe/Paris",
+          "status": "published",
+          "currency": {
+            "code": "EUR",
+            "minor_unit": 2,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "FR",
+              "name": "France",
+              "currency_code": "EUR",
+              "currency_symbol": "€",
+              "phone_code": "+33",
+              "active": true
+            },
+            "city": {
+              "id": "6",
+              "country_code": "FR",
+              "name": "Lyon",
+              "slug": "lyon",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": null,
+            "latitude": "45.7640000",
+            "longitude": "4.8357000"
+          },
+          "merchant": {
+            "id": "5",
+            "display_name": "Paris Mobilité Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "FR",
+            "name": "France",
+            "currency_code": "EUR",
+            "currency_symbol": "€",
+            "phone_code": "+33",
+            "active": true
+          },
+          "city": {
+            "id": "6",
+            "country_code": "FR",
+            "name": "Lyon",
+            "slug": "lyon",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": "45.7640000",
+          "longitude": "4.8357000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "6",
+        "reference": "BM-CI-DEMO-006",
+        "slug": "kia-sportage-2024-bm-ci-demo-006",
+        "title": "Kia Sportage",
+        "brand": {
+          "id": "6",
+          "name": "Kia",
+          "slug": "kia"
+        },
+        "model": {
+          "id": "12",
+          "brand_id": "6",
+          "name": "Sportage"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "1",
+          "slug": "suv",
+          "label": "SUV"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "22500000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 17500,
+        "fuel": "hybrid",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Vert",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:56Z",
+        "images": [
+          {
+            "id": "6",
+            "url": "http://127.0.0.1:8000/storage/vehicles/6/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "6",
+          "url": "http://127.0.0.1:8000/storage/vehicles/6/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          },
+          {
+            "id": "4",
+            "slug": "gps",
+            "label": "GPS"
+          }
+        ],
+        "shop": {
+          "id": "1",
+          "name": "Abidjan Prestige Motors",
+          "slug": "abidjan-prestige-motors-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "1",
+            "display_name": "BolideMarket Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "5",
+            "city_id": "1",
+            "name": "Yopougon",
+            "slug": "yopougon",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3450000",
+          "longitude": "-4.0800000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "5",
+        "reference": "BM-FR-DEMO-005",
+        "slug": "tesla-model-3-2024-bm-fr-demo-005",
+        "title": "Tesla Model 3",
+        "brand": {
+          "id": "5",
+          "name": "Tesla",
+          "slug": "tesla"
+        },
+        "model": {
+          "id": "11",
+          "brand_id": "5",
+          "name": "Model 3"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "2",
+          "slug": "sedan",
+          "label": "Berline"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "2590000",
+          "currency": "EUR",
+          "minor_unit": 2,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 16000,
+        "fuel": "electric",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Bleu",
+        "description": "Véhicule fictif. Photos et prix de démonstration.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:56Z",
+        "images": [
+          {
+            "id": "5",
+            "url": "http://127.0.0.1:8000/storage/vehicles/5/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "5",
+          "url": "http://127.0.0.1:8000/storage/vehicles/5/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          }
+        ],
+        "shop": {
+          "id": "5",
+          "name": "Paris Mobilité Démo",
+          "slug": "paris-mobilite-demo-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Europe/Paris",
+          "status": "published",
+          "currency": {
+            "code": "EUR",
+            "minor_unit": 2,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "FR",
+              "name": "France",
+              "currency_code": "EUR",
+              "currency_symbol": "€",
+              "phone_code": "+33",
+              "active": true
+            },
+            "city": {
+              "id": "5",
+              "country_code": "FR",
+              "name": "Paris",
+              "slug": "paris",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": null,
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "5",
+            "display_name": "Paris Mobilité Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "FR",
+            "name": "France",
+            "currency_code": "EUR",
+            "currency_symbol": "€",
+            "phone_code": "+33",
+            "active": true
+          },
+          "city": {
+            "id": "5",
+            "country_code": "FR",
+            "name": "Paris",
+            "slug": "paris",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": "48.8566000",
+          "longitude": "2.3522000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "4",
+        "reference": "BM-CI-DEMO-004",
+        "slug": "renault-kangoo-2024-bm-ci-demo-004",
+        "title": "Renault Kangoo",
+        "brand": {
+          "id": "4",
+          "name": "Renault",
+          "slug": "renault"
+        },
+        "model": {
+          "id": "8",
+          "brand_id": "4",
+          "name": "Kangoo"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "7",
+          "slug": "utility",
+          "label": "Utilitaire"
+        },
+        "offer_types": [
+          "rent"
+        ],
+        "sale_price": null,
+        "rental_daily_price": {
+          "amount_minor": "35000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": "day"
+        },
+        "mileage_km": 14500,
+        "fuel": "diesel",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Blanc",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:56Z",
+        "images": [
+          {
+            "id": "4",
+            "url": "http://127.0.0.1:8000/storage/vehicles/4/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "4",
+          "url": "http://127.0.0.1:8000/storage/vehicles/4/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          }
+        ],
+        "shop": {
+          "id": "4",
+          "name": "Ivoire Premium Auto",
+          "slug": "ivoire-premium-auto-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "4",
+            "display_name": "Ivoire Premium Auto",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "9",
+            "city_id": "1",
+            "name": "Bingerville",
+            "slug": "bingerville",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3550000",
+          "longitude": "-3.8850000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "3",
+        "reference": "BM-CI-DEMO-003",
+        "slug": "mercedes-benz-c300-2024-bm-ci-demo-003",
+        "title": "Mercedes-Benz C300",
+        "brand": {
+          "id": "3",
+          "name": "Mercedes-Benz",
+          "slug": "mercedes-benz"
+        },
+        "model": {
+          "id": "6",
+          "brand_id": "3",
+          "name": "C300"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "6",
+          "slug": "luxury",
+          "label": "Luxe"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "28900000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 13000,
+        "fuel": "petrol",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Champagne",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:56Z",
+        "images": [
+          {
+            "id": "3",
+            "url": "http://127.0.0.1:8000/storage/vehicles/3/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "3",
+          "url": "http://127.0.0.1:8000/storage/vehicles/3/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          },
+          {
+            "id": "4",
+            "slug": "gps",
+            "label": "GPS"
+          }
+        ],
+        "shop": {
+          "id": "3",
+          "name": "Lagune Rent Cars",
+          "slug": "lagune-rent-cars-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "2",
+              "city_id": "1",
+              "name": "Marcory",
+              "slug": "marcory",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "3",
+            "display_name": "Lagune Rent Cars",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "4",
+            "city_id": "1",
+            "name": "Plateau",
+            "slug": "plateau",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3350000",
+          "longitude": "-4.0200000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "2",
+        "reference": "BM-CI-DEMO-002",
+        "slug": "peugeot-208-2024-bm-ci-demo-002",
+        "title": "Peugeot 208",
+        "brand": {
+          "id": "2",
+          "name": "Peugeot",
+          "slug": "peugeot"
+        },
+        "model": {
+          "id": "4",
+          "brand_id": "2",
+          "name": "208"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "3",
+          "slug": "city",
+          "label": "Citadine"
+        },
+        "offer_types": [
+          "rent"
+        ],
+        "sale_price": null,
+        "rental_daily_price": {
+          "amount_minor": "45000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": "day"
+        },
+        "mileage_km": 11500,
+        "fuel": "petrol",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Rouge",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:56Z",
+        "images": [
+          {
+            "id": "2",
+            "url": "http://127.0.0.1:8000/storage/vehicles/2/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "2",
+          "url": "http://127.0.0.1:8000/storage/vehicles/2/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          },
+          {
+            "id": "3",
+            "slug": "camera-de-recul",
+            "label": "Caméra de recul"
+          }
+        ],
+        "shop": {
+          "id": "2",
+          "name": "Cocody Auto Selection",
+          "slug": "cocody-auto-selection-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "2",
+            "display_name": "Cocody Auto Selection",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "2",
+            "city_id": "1",
+            "name": "Marcory",
+            "slug": "marcory",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3050000",
+          "longitude": "-3.9900000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      },
+      {
+        "id": "1",
+        "reference": "BM-CI-DEMO-001",
+        "slug": "toyota-rav4-2024-bm-ci-demo-001",
+        "title": "Toyota RAV4",
+        "brand": {
+          "id": "1",
+          "name": "Toyota",
+          "slug": "toyota"
+        },
+        "model": {
+          "id": "1",
+          "brand_id": "1",
+          "name": "RAV4"
+        },
+        "trim": null,
+        "year": 2024,
+        "condition": "used",
+        "category": {
+          "id": "1",
+          "slug": "suv",
+          "label": "SUV"
+        },
+        "offer_types": [
+          "sale"
+        ],
+        "sale_price": {
+          "amount_minor": "18500000",
+          "currency": "XOF",
+          "minor_unit": 0,
+          "unit": null
+        },
+        "rental_daily_price": null,
+        "mileage_km": 10000,
+        "fuel": "petrol",
+        "transmission": "automatic",
+        "engine": null,
+        "horsepower": null,
+        "doors": 5,
+        "seats": 5,
+        "color": "Blanc",
+        "description": "Véhicule fictif. Photos et prix de démonstration. Position de démonstration indicative.",
+        "publication_status": "published",
+        "inventory_status": "available",
+        "is_available_now": true,
+        "future_availability": null,
+        "distance_km": null,
+        "is_featured": false,
+        "is_certified": false,
+        "published_at": "2026-09-25T21:10:55Z",
+        "images": [
+          {
+            "id": "1",
+            "url": "http://127.0.0.1:8000/storage/vehicles/1/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          }
+        ],
+        "primary_image": {
+          "id": "1",
+          "url": "http://127.0.0.1:8000/storage/vehicles/1/demo-placeholder.svg",
+          "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+          "position": 0,
+          "is_primary": true,
+          "is_placeholder": true
+        },
+        "features": [
+          {
+            "id": "1",
+            "slug": "climatisation",
+            "label": "Climatisation"
+          },
+          {
+            "id": "2",
+            "slug": "bluetooth",
+            "label": "Bluetooth"
+          }
+        ],
+        "shop": {
+          "id": "1",
+          "name": "Abidjan Prestige Motors",
+          "slug": "abidjan-prestige-motors-demo",
+          "description": "Boutique fictive — données de démonstration.",
+          "email": null,
+          "phone": null,
+          "address": "Adresse de démonstration",
+          "timezone": "Africa/Abidjan",
+          "status": "published",
+          "currency": {
+            "code": "XOF",
+            "minor_unit": 0,
+            "active": true
+          },
+          "location": {
+            "country": {
+              "code": "CI",
+              "name": "Côte d’Ivoire",
+              "currency_code": "XOF",
+              "currency_symbol": "FCFA",
+              "phone_code": "+225",
+              "active": true
+            },
+            "city": {
+              "id": "1",
+              "country_code": "CI",
+              "name": "Abidjan",
+              "slug": "abidjan",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": {
+              "id": "1",
+              "city_id": "1",
+              "name": "Cocody",
+              "slug": "cocody",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "latitude": null,
+            "longitude": null
+          },
+          "merchant": {
+            "id": "1",
+            "display_name": "BolideMarket Démo",
+            "is_verified": false
+          },
+          "is_demo": true,
+          "demo_notice": "Boutique et données de démonstration."
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "1",
+            "city_id": "1",
+            "name": "Cocody",
+            "slug": "cocody",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": "5.3599000",
+          "longitude": "-4.0083000"
+        },
+        "is_demo": true,
+        "demo_notice": "Véhicule, prix et données de démonstration."
+      }
+    ],
+    "links": {
+      "first": "http://127.0.0.1:8000/api/v1/vehicles?page=1",
+      "last": "http://127.0.0.1:8000/api/v1/vehicles?page=1",
+      "prev": null,
+      "next": null
+    },
+    "meta": {
+      "current_page": 1,
+      "from": 1,
+      "last_page": 1,
+      "links": [
+        {
+          "url": null,
+          "label": "&laquo; Previous",
+          "page": null,
+          "active": false
+        },
+        {
+          "url": "http://127.0.0.1:8000/api/v1/vehicles?page=1",
+          "label": "1",
+          "page": 1,
+          "active": true
+        },
+        {
+          "url": null,
+          "label": "Next &raquo;",
+          "page": null,
+          "active": false
+        }
+      ],
+      "path": "http://127.0.0.1:8000/api/v1/vehicles",
+      "per_page": 20,
+      "to": 20,
+      "total": 20
+    }
+  },
+  "countries": {
+    "data": [
+      {
+        "code": "BE",
+        "name": "Belgique",
+        "currency_code": "EUR",
+        "currency_symbol": "€",
+        "phone_code": "+32",
+        "active": true
+      },
+      {
+        "code": "CA",
+        "name": "Canada",
+        "currency_code": "CAD",
+        "currency_symbol": "CA$",
+        "phone_code": "+1",
+        "active": true
+      },
+      {
+        "code": "CI",
+        "name": "Côte d’Ivoire",
+        "currency_code": "XOF",
+        "currency_symbol": "FCFA",
+        "phone_code": "+225",
+        "active": true
+      },
+      {
+        "code": "FR",
+        "name": "France",
+        "currency_code": "EUR",
+        "currency_symbol": "€",
+        "phone_code": "+33",
+        "active": true
+      },
+      {
+        "code": "SN",
+        "name": "Sénégal",
+        "currency_code": "XOF",
+        "currency_symbol": "FCFA",
+        "phone_code": "+221",
+        "active": true
+      }
+    ]
+  },
+  "cities": {
+    "data": [
+      {
+        "id": "11",
+        "country_code": "BE",
+        "name": "Bruxelles",
+        "slug": "bruxelles",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "12",
+        "country_code": "CA",
+        "name": "Montréal",
+        "slug": "montreal",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "1",
+        "country_code": "CI",
+        "name": "Abidjan",
+        "slug": "abidjan",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "2",
+        "country_code": "CI",
+        "name": "Bouaké",
+        "slug": "bouake",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "4",
+        "country_code": "CI",
+        "name": "San-Pédro",
+        "slug": "san-pedro",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "3",
+        "country_code": "CI",
+        "name": "Yamoussoukro",
+        "slug": "yamoussoukro",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "9",
+        "country_code": "FR",
+        "name": "Bordeaux",
+        "slug": "bordeaux",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "6",
+        "country_code": "FR",
+        "name": "Lyon",
+        "slug": "lyon",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "7",
+        "country_code": "FR",
+        "name": "Marseille",
+        "slug": "marseille",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "8",
+        "country_code": "FR",
+        "name": "Nice",
+        "slug": "nice",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "5",
+        "country_code": "FR",
+        "name": "Paris",
+        "slug": "paris",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "10",
+        "country_code": "SN",
+        "name": "Dakar",
+        "slug": "dakar",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      }
+    ]
+  },
+  "districts": {
+    "data": [
+      {
+        "id": "1",
+        "city_id": "1",
+        "name": "Cocody",
+        "slug": "cocody",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "2",
+        "city_id": "1",
+        "name": "Marcory",
+        "slug": "marcory",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "3",
+        "city_id": "1",
+        "name": "Treichville",
+        "slug": "treichville",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "4",
+        "city_id": "1",
+        "name": "Plateau",
+        "slug": "plateau",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "5",
+        "city_id": "1",
+        "name": "Yopougon",
+        "slug": "yopougon",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "6",
+        "city_id": "1",
+        "name": "Koumassi",
+        "slug": "koumassi",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "7",
+        "city_id": "1",
+        "name": "Port-Bouët",
+        "slug": "port-bouet",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "8",
+        "city_id": "1",
+        "name": "Abobo",
+        "slug": "abobo",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      },
+      {
+        "id": "9",
+        "city_id": "1",
+        "name": "Bingerville",
+        "slug": "bingerville",
+        "latitude": null,
+        "longitude": null,
+        "active": true
+      }
+    ]
+  },
+  "shops": {
+    "data": [
+      {
+        "id": "8",
+        "name": "Bruxelles Mobilité Démo",
+        "slug": "bruxelles-mobilite-geo-demo",
+        "description": "Boutique fictive. Position indicative de démonstration.",
+        "email": null,
+        "phone": null,
+        "address": "Adresse de démonstration",
+        "timezone": "Europe/Brussels",
+        "status": "published",
+        "currency": {
+          "code": "EUR",
+          "minor_unit": 2,
+          "active": true
+        },
+        "location": {
+          "country": {
+            "code": "BE",
+            "name": "Belgique",
+            "currency_code": "EUR",
+            "currency_symbol": "€",
+            "phone_code": "+32",
+            "active": true
+          },
+          "city": {
+            "id": "11",
+            "country_code": "BE",
+            "name": "Bruxelles",
+            "slug": "bruxelles",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": "50.8503000",
+          "longitude": "4.3517000"
+        },
+        "merchant": {
+          "id": "5",
+          "display_name": "Paris Mobilité Démo",
+          "is_verified": false
+        },
+        "published_vehicles_count": 1,
+        "is_demo": true,
+        "demo_notice": "Boutique et données de démonstration."
+      },
+      {
+        "id": "7",
+        "name": "Dakar Mobilité Démo",
+        "slug": "dakar-mobilite-geo-demo",
+        "description": "Boutique fictive. Position indicative de démonstration.",
+        "email": null,
+        "phone": null,
+        "address": "Adresse de démonstration",
+        "timezone": "Africa/Dakar",
+        "status": "published",
+        "currency": {
+          "code": "XOF",
+          "minor_unit": 0,
+          "active": true
+        },
+        "location": {
+          "country": {
+            "code": "SN",
+            "name": "Sénégal",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+221",
+            "active": true
+          },
+          "city": {
+            "id": "10",
+            "country_code": "SN",
+            "name": "Dakar",
+            "slug": "dakar",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": "14.7167000",
+          "longitude": "-17.4677000"
+        },
+        "merchant": {
+          "id": "5",
+          "display_name": "Paris Mobilité Démo",
+          "is_verified": false
+        },
+        "published_vehicles_count": 1,
+        "is_demo": true,
+        "demo_notice": "Boutique et données de démonstration."
+      },
+      {
+        "id": "6",
+        "name": "Lyon Mobilité Démo",
+        "slug": "lyon-mobilite-geo-demo",
+        "description": "Boutique fictive. Position indicative de démonstration.",
+        "email": null,
+        "phone": null,
+        "address": "Adresse de démonstration",
+        "timezone": "Europe/Paris",
+        "status": "published",
+        "currency": {
+          "code": "EUR",
+          "minor_unit": 2,
+          "active": true
+        },
+        "location": {
+          "country": {
+            "code": "FR",
+            "name": "France",
+            "currency_code": "EUR",
+            "currency_symbol": "€",
+            "phone_code": "+33",
+            "active": true
+          },
+          "city": {
+            "id": "6",
+            "country_code": "FR",
+            "name": "Lyon",
+            "slug": "lyon",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": "45.7640000",
+          "longitude": "4.8357000"
+        },
+        "merchant": {
+          "id": "5",
+          "display_name": "Paris Mobilité Démo",
+          "is_verified": false
+        },
+        "published_vehicles_count": 1,
+        "is_demo": true,
+        "demo_notice": "Boutique et données de démonstration."
+      },
+      {
+        "id": "5",
+        "name": "Paris Mobilité Démo",
+        "slug": "paris-mobilite-demo-demo",
+        "description": "Boutique fictive — données de démonstration.",
+        "email": null,
+        "phone": null,
+        "address": "Adresse de démonstration",
+        "timezone": "Europe/Paris",
+        "status": "published",
+        "currency": {
+          "code": "EUR",
+          "minor_unit": 2,
+          "active": true
+        },
+        "location": {
+          "country": {
+            "code": "FR",
+            "name": "France",
+            "currency_code": "EUR",
+            "currency_symbol": "€",
+            "phone_code": "+33",
+            "active": true
+          },
+          "city": {
+            "id": "5",
+            "country_code": "FR",
+            "name": "Paris",
+            "slug": "paris",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": null,
+          "latitude": null,
+          "longitude": null
+        },
+        "merchant": {
+          "id": "5",
+          "display_name": "Paris Mobilité Démo",
+          "is_verified": false
+        },
+        "published_vehicles_count": 3,
+        "is_demo": true,
+        "demo_notice": "Boutique et données de démonstration."
+      },
+      {
+        "id": "4",
+        "name": "Ivoire Premium Auto",
+        "slug": "ivoire-premium-auto-demo",
+        "description": "Boutique fictive — données de démonstration.",
+        "email": null,
+        "phone": null,
+        "address": "Adresse de démonstration",
+        "timezone": "Africa/Abidjan",
+        "status": "published",
+        "currency": {
+          "code": "XOF",
+          "minor_unit": 0,
+          "active": true
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "1",
+            "city_id": "1",
+            "name": "Cocody",
+            "slug": "cocody",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": null,
+          "longitude": null
+        },
+        "merchant": {
+          "id": "4",
+          "display_name": "Ivoire Premium Auto",
+          "is_verified": false
+        },
+        "published_vehicles_count": 3,
+        "is_demo": true,
+        "demo_notice": "Boutique et données de démonstration."
+      },
+      {
+        "id": "3",
+        "name": "Lagune Rent Cars",
+        "slug": "lagune-rent-cars-demo",
+        "description": "Boutique fictive — données de démonstration.",
+        "email": null,
+        "phone": null,
+        "address": "Adresse de démonstration",
+        "timezone": "Africa/Abidjan",
+        "status": "published",
+        "currency": {
+          "code": "XOF",
+          "minor_unit": 0,
+          "active": true
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "2",
+            "city_id": "1",
+            "name": "Marcory",
+            "slug": "marcory",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": null,
+          "longitude": null
+        },
+        "merchant": {
+          "id": "3",
+          "display_name": "Lagune Rent Cars",
+          "is_verified": false
+        },
+        "published_vehicles_count": 3,
+        "is_demo": true,
+        "demo_notice": "Boutique et données de démonstration."
+      },
+      {
+        "id": "2",
+        "name": "Cocody Auto Selection",
+        "slug": "cocody-auto-selection-demo",
+        "description": "Boutique fictive — données de démonstration.",
+        "email": null,
+        "phone": null,
+        "address": "Adresse de démonstration",
+        "timezone": "Africa/Abidjan",
+        "status": "published",
+        "currency": {
+          "code": "XOF",
+          "minor_unit": 0,
+          "active": true
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "1",
+            "city_id": "1",
+            "name": "Cocody",
+            "slug": "cocody",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": null,
+          "longitude": null
+        },
+        "merchant": {
+          "id": "2",
+          "display_name": "Cocody Auto Selection",
+          "is_verified": false
+        },
+        "published_vehicles_count": 4,
+        "is_demo": true,
+        "demo_notice": "Boutique et données de démonstration."
+      },
+      {
+        "id": "1",
+        "name": "Abidjan Prestige Motors",
+        "slug": "abidjan-prestige-motors-demo",
+        "description": "Boutique fictive — données de démonstration.",
+        "email": null,
+        "phone": null,
+        "address": "Adresse de démonstration",
+        "timezone": "Africa/Abidjan",
+        "status": "published",
+        "currency": {
+          "code": "XOF",
+          "minor_unit": 0,
+          "active": true
+        },
+        "location": {
+          "country": {
+            "code": "CI",
+            "name": "Côte d’Ivoire",
+            "currency_code": "XOF",
+            "currency_symbol": "FCFA",
+            "phone_code": "+225",
+            "active": true
+          },
+          "city": {
+            "id": "1",
+            "country_code": "CI",
+            "name": "Abidjan",
+            "slug": "abidjan",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "district": {
+            "id": "1",
+            "city_id": "1",
+            "name": "Cocody",
+            "slug": "cocody",
+            "latitude": null,
+            "longitude": null,
+            "active": true
+          },
+          "latitude": null,
+          "longitude": null
+        },
+        "merchant": {
+          "id": "1",
+          "display_name": "BolideMarket Démo",
+          "is_verified": false
+        },
+        "published_vehicles_count": 4,
+        "is_demo": true,
+        "demo_notice": "Boutique et données de démonstration."
+      }
+    ],
+    "links": {
+      "first": "http://127.0.0.1:8000/api/v1/shops?page=1",
+      "last": "http://127.0.0.1:8000/api/v1/shops?page=1",
+      "prev": null,
+      "next": null
+    },
+    "meta": {
+      "current_page": 1,
+      "from": 1,
+      "last_page": 1,
+      "links": [
+        {
+          "url": null,
+          "label": "&laquo; Previous",
+          "page": null,
+          "active": false
+        },
+        {
+          "url": "http://127.0.0.1:8000/api/v1/shops?page=1",
+          "label": "1",
+          "page": 1,
+          "active": true
+        },
+        {
+          "url": null,
+          "label": "Next &raquo;",
+          "page": null,
+          "active": false
+        }
+      ],
+      "path": "http://127.0.0.1:8000/api/v1/shops",
+      "per_page": 20,
+      "to": 8,
+      "total": 8
+    }
+  },
+  "brands": {
+    "data": [
+      {
+        "id": "1",
+        "name": "Toyota",
+        "slug": "toyota"
+      },
+      {
+        "id": "2",
+        "name": "Peugeot",
+        "slug": "peugeot"
+      },
+      {
+        "id": "3",
+        "name": "Mercedes-Benz",
+        "slug": "mercedes-benz"
+      },
+      {
+        "id": "4",
+        "name": "Renault",
+        "slug": "renault"
+      },
+      {
+        "id": "5",
+        "name": "Tesla",
+        "slug": "tesla"
+      },
+      {
+        "id": "6",
+        "name": "Kia",
+        "slug": "kia"
+      },
+      {
+        "id": "7",
+        "name": "Volkswagen",
+        "slug": "volkswagen"
+      },
+      {
+        "id": "8",
+        "name": "BMW",
+        "slug": "bmw"
+      },
+      {
+        "id": "9",
+        "name": "Ford",
+        "slug": "ford"
+      },
+      {
+        "id": "10",
+        "name": "Hyundai",
+        "slug": "hyundai"
+      },
+      {
+        "id": "11",
+        "name": "Mini",
+        "slug": "mini"
+      },
+      {
+        "id": "12",
+        "name": "Porsche",
+        "slug": "porsche"
+      }
+    ]
+  },
+  "categories": {
+    "data": [
+      {
+        "id": "1",
+        "slug": "suv",
+        "label": "SUV"
+      },
+      {
+        "id": "2",
+        "slug": "sedan",
+        "label": "Berline"
+      },
+      {
+        "id": "3",
+        "slug": "city",
+        "label": "Citadine"
+      },
+      {
+        "id": "4",
+        "slug": "four_by_four",
+        "label": "4×4"
+      },
+      {
+        "id": "5",
+        "slug": "sport",
+        "label": "Sport"
+      },
+      {
+        "id": "6",
+        "slug": "luxury",
+        "label": "Luxe"
+      },
+      {
+        "id": "7",
+        "slug": "utility",
+        "label": "Utilitaire"
+      }
+    ]
+  },
+  "shop": {
+    "data": {
+      "id": "8",
+      "name": "Bruxelles Mobilité Démo",
+      "slug": "bruxelles-mobilite-geo-demo",
+      "description": "Boutique fictive. Position indicative de démonstration.",
+      "email": null,
+      "phone": null,
+      "address": "Adresse de démonstration",
+      "timezone": "Europe/Brussels",
+      "status": "published",
+      "currency": {
+        "code": "EUR",
+        "minor_unit": 2,
+        "active": true
+      },
+      "location": {
+        "country": {
+          "code": "BE",
+          "name": "Belgique",
+          "currency_code": "EUR",
+          "currency_symbol": "€",
+          "phone_code": "+32",
+          "active": true
+        },
+        "city": {
+          "id": "11",
+          "country_code": "BE",
+          "name": "Bruxelles",
+          "slug": "bruxelles",
+          "latitude": null,
+          "longitude": null,
+          "active": true
+        },
+        "district": null,
+        "latitude": "50.8503000",
+        "longitude": "4.3517000"
+      },
+      "merchant": {
+        "id": "5",
+        "display_name": "Paris Mobilité Démo",
+        "is_verified": false
+      },
+      "published_vehicles_count": 1,
+      "vehicles": [
+        {
+          "id": "21",
+          "reference": "BM-BE-GEO-BRUXELLES",
+          "slug": "bm-be-geo-bruxelles",
+          "title": "Tesla Model 3",
+          "brand": {
+            "id": "5",
+            "name": "Tesla",
+            "slug": "tesla"
+          },
+          "model": {
+            "id": "11",
+            "brand_id": "5",
+            "name": "Model 3"
+          },
+          "trim": null,
+          "year": 2024,
+          "condition": "used",
+          "category": {
+            "id": "2",
+            "slug": "sedan",
+            "label": "Berline"
+          },
+          "offer_types": [
+            "sale"
+          ],
+          "sale_price": {
+            "amount_minor": "2590000",
+            "currency": "EUR",
+            "minor_unit": 2,
+            "unit": null
+          },
+          "rental_daily_price": null,
+          "mileage_km": 16000,
+          "fuel": "electric",
+          "transmission": "automatic",
+          "engine": null,
+          "horsepower": null,
+          "doors": 5,
+          "seats": 5,
+          "color": "Bleu",
+          "description": "Véhicule fictif, prix et position indicative de démonstration.",
+          "publication_status": "published",
+          "inventory_status": "available",
+          "is_available_now": true,
+          "future_availability": null,
+          "distance_km": null,
+          "is_featured": false,
+          "is_certified": false,
+          "published_at": "2026-09-25T21:10:56Z",
+          "images": [
+            {
+              "id": "21",
+              "url": "http://127.0.0.1:8000/storage/vehicles/21/demo-placeholder.svg",
+              "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+              "position": 0,
+              "is_primary": true,
+              "is_placeholder": true
+            }
+          ],
+          "primary_image": {
+            "id": "21",
+            "url": "http://127.0.0.1:8000/storage/vehicles/21/demo-placeholder.svg",
+            "alt_text": "Placeholder de démonstration, aucune photographie disponible.",
+            "position": 0,
+            "is_primary": true,
+            "is_placeholder": true
+          },
+          "features": [],
+          "shop": {
+            "id": "8",
+            "name": "Bruxelles Mobilité Démo",
+            "slug": "bruxelles-mobilite-geo-demo",
+            "description": "Boutique fictive. Position indicative de démonstration.",
+            "email": null,
+            "phone": null,
+            "address": "Adresse de démonstration",
+            "timezone": "Europe/Brussels",
+            "status": "published",
+            "currency": {
+              "code": "EUR",
+              "minor_unit": 2,
+              "active": true
+            },
+            "location": {
+              "country": {
+                "code": "BE",
+                "name": "Belgique",
+                "currency_code": "EUR",
+                "currency_symbol": "€",
+                "phone_code": "+32",
+                "active": true
+              },
+              "city": {
+                "id": "11",
+                "country_code": "BE",
+                "name": "Bruxelles",
+                "slug": "bruxelles",
+                "latitude": null,
+                "longitude": null,
+                "active": true
+              },
+              "district": null,
+              "latitude": "50.8503000",
+              "longitude": "4.3517000"
+            },
+            "merchant": {
+              "id": "5",
+              "display_name": "Paris Mobilité Démo",
+              "is_verified": false
+            },
+            "is_demo": true,
+            "demo_notice": "Boutique et données de démonstration."
+          },
+          "location": {
+            "country": {
+              "code": "BE",
+              "name": "Belgique",
+              "currency_code": "EUR",
+              "currency_symbol": "€",
+              "phone_code": "+32",
+              "active": true
+            },
+            "city": {
+              "id": "11",
+              "country_code": "BE",
+              "name": "Bruxelles",
+              "slug": "bruxelles",
+              "latitude": null,
+              "longitude": null,
+              "active": true
+            },
+            "district": null,
+            "latitude": "50.8503000",
+            "longitude": "4.3517000"
+          },
+          "is_demo": true,
+          "demo_notice": "Véhicule, prix et données de démonstration."
+        }
+      ],
+      "is_demo": true,
+      "demo_notice": "Boutique et données de démonstration."
+    }
+  }
+}

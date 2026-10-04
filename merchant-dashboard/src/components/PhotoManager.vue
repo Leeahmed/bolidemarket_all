@@ -1,0 +1,15 @@
+<script setup>
+import { ref,onBeforeUnmount } from 'vue'
+import { merchantVehicleService as api } from '../services/merchant'
+import FormError from './FormError.vue'
+import SafeImage from './SafeImage.vue'
+import ConfirmDialog from './ConfirmDialog.vue'
+const props=defineProps({vehicle:Object,modelValue:Array,disabled:Boolean}),emit=defineEmits(['update:modelValue','reload'])
+const error=ref(null),busy=ref(false),removing=ref(null),previews=new Map()
+function preview(file){if(!previews.has(file))previews.set(file,URL.createObjectURL(file));return previews.get(file)}
+function add(files){error.value=null;const valid=[];for(const f of Array.from(files||[])){if(!['image/jpeg','image/png','image/webp'].includes(f.type)||f.size>5*1024*1024){error.value=new Error('Photos JPG, PNG ou WebP, 5 Mo maximum par fichier.');continue}valid.push(f)}if(valid.length+props.modelValue.length+(props.vehicle?.images?.length||0)>20){error.value=new Error('Maximum 20 photos par véhicule.');return}emit('update:modelValue',[...props.modelValue,...valid])}
+function removeQueued(index){const f=props.modelValue[index];if(previews.has(f)){URL.revokeObjectURL(previews.get(f));previews.delete(f)}emit('update:modelValue',props.modelValue.filter((_,i)=>i!==index))}
+async function primary(id){busy.value=true;error.value=null;try{await api.primary(props.vehicle.id,id);emit('reload')}catch(e){error.value=e}finally{busy.value=false}}
+async function remove(){busy.value=true;error.value=null;try{await api.removeImage(props.vehicle.id,removing.value.id);removing.value=null;emit('reload')}catch(e){error.value=e}finally{busy.value=false}}
+onBeforeUnmount(()=>{for(const url of previews.values())URL.revokeObjectURL(url)})
+</script><template><FormError :error="error"/><label class="drop-zone" @dragover.prevent @drop.prevent="!disabled && add($event.dataTransfer.files)"><strong>Déposez vos photos ici</strong><span>ou choisissez des fichiers · JPG, PNG, WebP · 5 Mo max.</span><input type="file" multiple accept="image/jpeg,image/png,image/webp" :disabled="disabled||busy" @change="add($event.target.files);$event.target.value=''"/></label><div class="photo-grid"><article v-for="p in vehicle?.images || []" :key="p.id"><SafeImage :src="p.url" :alt="p.alt_text || 'Photo véhicule'"/><span v-if="p.position===0" class="badge">Photo principale</span><div class="actions"><button v-if="p.position!==0" type="button" :disabled="disabled||busy" @click="primary(p.id)">Définir principale</button><button type="button" :disabled="disabled||busy" @click="removing=p">Supprimer</button></div></article><article v-for="(file,i) in modelValue" :key="i"><SafeImage :src="preview(file)" :alt="file.name"/><small>{{ file.name }} · à enregistrer</small><button type="button" :disabled="disabled" @click="removeQueued(i)">Retirer</button></article></div><ConfirmDialog :open="!!removing" title="Supprimer cette photo ?" :busy="busy" @close="removing=null" @confirm="remove"><p>Cette action retire définitivement la photo.</p><FormError :error="error"/></ConfirmDialog></template>

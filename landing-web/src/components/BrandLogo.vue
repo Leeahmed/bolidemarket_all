@@ -1,0 +1,1 @@
+<template><a class="brand" href="#accueil" aria-label="BolideMarket, accueil"><img src="/images/logo-horizontal.webp" width="840" height="175" alt="BolideMarket — Achetez. Louez. Roulez." /></a></template>

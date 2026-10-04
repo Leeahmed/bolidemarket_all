@@ -1,0 +1,367 @@
+{
+  "results": [
+    {
+      "route": "dashboard",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "dashboard",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "dashboard",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "dashboard",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "dashboard",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "dashboard",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles/create",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles/create",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles/create",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles/create",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles/create",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "vehicles/create",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "reservations",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "reservations",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "reservations",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "reservations",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "reservations",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "reservations",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "orders",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "orders",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "orders",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "orders",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "orders",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "orders",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "rentals",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "rentals",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "rentals",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "rentals",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "rentals",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "rentals",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "clients",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "clients",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "clients",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "clients",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "clients",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "clients",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "shop",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "shop",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "shop",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "shop",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "shop",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "shop",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "profile",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "profile",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "profile",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "profile",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "profile",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "profile",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "settings",
+      "width": 1920,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "settings",
+      "width": 1440,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "settings",
+      "width": 1366,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "settings",
+      "width": 1024,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "settings",
+      "width": 768,
+      "overflow": false,
+      "alerts": []
+    },
+    {
+      "route": "settings",
+      "width": 390,
+      "overflow": false,
+      "alerts": []
+    }
+  ],
+  "errors": [],
+  "logout": true,
+  "mobileDrawer": true
+}

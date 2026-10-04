@@ -1,0 +1,1 @@
+<template><section class="container empty-state"><p class="eyebrow">404</p><h1>Cette page est introuvable.</h1><p>Reprenez votre recherche parmi les véhicules du catalogue.</p><RouterLink class="button" to="/vehicles">Voir les véhicules</RouterLink></section></template>

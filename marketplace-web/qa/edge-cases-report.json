@@ -1,0 +1,7 @@
+{
+  "geolocationMockAccepted": "PASS",
+  "backendDistances": "PASS",
+  "geolocationDeniedManualAvailable": "PASS",
+  "apiErrorAndRetry": "PASS",
+  "missingVehicle404": "PASS"
+}

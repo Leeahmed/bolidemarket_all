@@ -1,0 +1,1 @@
+<script setup>import { toasts,dismiss } from './stores/toasts'</script><template><RouterView/><div class="toasts" aria-live="polite"><button v-for="t in toasts" :key="t.id" @click="dismiss(t.id)">{{ t.message }} <span aria-hidden="true">×</span></button></div></template>

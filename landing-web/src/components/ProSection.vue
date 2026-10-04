@@ -1,0 +1,5 @@
+<script setup>
+import { config } from '../config'
+import AppIcon from './AppIcon.vue'
+</script>
+<template><section id="bolidemarket-pro" class="pro-section"><div class="container marketing-split"><div class="marketing-copy" data-reveal><p class="eyebrow">BOLIDEMARKET PRO</p><h2>Vous vendez ou louez des véhicules ?</h2><p>Gérez votre parc, vos prix, vos disponibilités, vos réservations et vos ventes depuis un seul espace.</p><div class="button-row"><a class="button button-primary" :href="config.merchantUrl">Découvrir BolideMarket Pro <AppIcon /></a><a class="button button-outline" :href="config.merchantUrl">Créer mon espace professionnel</a></div></div><figure class="pro-mockup" data-reveal data-parallax><img src="/images/pro-dashboard.webp" width="1011" height="851" alt="Aperçu validé de BolideMarket Pro : 140 véhicules, dont 16 disponibles, 28 loués, 84 vendus et 12 autres. Données de démonstration." loading="lazy" /><figcaption>Aperçu de démonstration · espace professionnel à venir.</figcaption></figure></div></section></template>

@@ -1,0 +1,6 @@
+<script setup>
+import { config } from '../config'
+import { auth } from '../stores/auth'
+import UserAvatar from '../components/UserAvatar.vue'
+</script>
+<template><section class="container role-home"><UserAvatar :user="auth.user" /><p class="eyebrow">{{ auth.user?.role === 'merchant' ? 'BOLIDEMARKET PRO' : 'ADMINISTRATION' }}</p><h1>{{ auth.user?.role === 'merchant' ? 'Votre espace professionnel est créé.' : 'Votre accès administrateur est reconnu.' }}</h1><template v-if="auth.user?.role === 'merchant'"><p class="page-lead">{{ auth.user?.merchant?.approval_status === 'approved' ? 'Votre compte est approuvé.' : 'Votre compte est en attente de validation.' }}</p><div v-for="shop in auth.user?.merchant?.shops" :key="shop.id" class="content-panel"><h2>{{ shop.name }}</h2><p>{{ shop.country_code }} · {{ shop.currency_code }} · {{ shop.status === 'published' ? 'Publiée' : 'Brouillon' }}</p></div></template><a v-if="auth.user?.role === 'merchant'" class="button" :href="config.merchantUrl + '/dashboard'">Accéder à BolideMarket Pro →</a><p v-else class="notice">Le tableau de bord administrateur sera disponible dans une prochaine phase.</p><RouterLink class="button" to="/vehicles">Explorer la marketplace →</RouterLink></section></template>

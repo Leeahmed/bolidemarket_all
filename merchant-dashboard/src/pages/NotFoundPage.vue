@@ -1,0 +1,1 @@
+<template><section class="panel empty"><h1>Page introuvable</h1><p>Cette page n’existe pas ou a été déplacée.</p><RouterLink class="button" to="/dashboard">Revenir au tableau de bord</RouterLink></section></template>
