@@ -1,0 +1,275 @@
+{
+  "passed": true,
+  "vehicle": "25",
+  "reservation": "6",
+  "order": "7",
+  "errors": [],
+  "frames": [
+    {
+      "who": "merchant",
+      "type": "VehicleCreated",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleImageUpdated",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "merchant",
+      "type": "VehiclePublished",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehiclePublished",
+      "channel": "marketplace"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleUpdated",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleUpdated",
+      "channel": "marketplace"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleUpdated",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleUpdated",
+      "channel": "marketplace"
+    },
+    {
+      "who": "merchant",
+      "type": "ReservationCreated",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "ReservationCreated",
+      "channel": "private-user.23"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "marketplace"
+    },
+    {
+      "who": "client",
+      "type": "OrderCreated",
+      "channel": "private-user.23"
+    },
+    {
+      "who": "merchant",
+      "type": "OrderCreated",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "marketplace"
+    },
+    {
+      "who": "merchant",
+      "type": "ReservationConfirmed",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "ReservationConfirmed",
+      "channel": "private-user.23"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "marketplace"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "client",
+      "type": "file-changed"
+    },
+    {
+      "who": "merchant",
+      "type": "OrderCancelled",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "OrderCancelled",
+      "channel": "private-user.23"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "marketplace"
+    },
+    {
+      "who": "merchant",
+      "type": "ReservationCancelled",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "ReservationCancelled",
+      "channel": "private-user.23"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "marketplace"
+    },
+    {
+      "who": "merchant",
+      "type": "OrderCreated",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "OrderCreated",
+      "channel": "private-user.23"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "marketplace"
+    },
+    {
+      "who": "merchant",
+      "type": "OrderConfirmed",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "OrderConfirmed",
+      "channel": "private-user.23"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "marketplace"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleStatusChanged",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleStatusChanged",
+      "channel": "marketplace"
+    },
+    {
+      "who": "merchant",
+      "type": "OrderCompleted",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "OrderCompleted",
+      "channel": "private-user.23"
+    },
+    {
+      "who": "merchant",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "private-merchant.10"
+    },
+    {
+      "who": "client",
+      "type": "VehicleAvailabilityChanged",
+      "channel": "marketplace"
+    }
+  ],
+  "scenarios": [
+    "publication",
+    "price",
+    "reservation",
+    "confirmation",
+    "sale",
+    "private-channel-isolation"
+  ]
+}

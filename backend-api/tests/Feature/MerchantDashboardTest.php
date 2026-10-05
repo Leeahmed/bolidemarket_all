@@ -68,7 +68,7 @@ class MerchantDashboardTest extends TestCase
     {
         Sanctum::actingAs($customer);
 
-        return $this->withHeader('Idempotency-Key', (string) Str::uuid())->postJson('/api/v1/orders', ['vehicle_id' => $vehicle->id, 'payment_method' => 'CARD_DEMO'])->assertCreated()->json('data.id');
+        return $this->withHeader('Idempotency-Key', (string) Str::uuid())->postJson('/api/v1/orders', ['vehicle_id' => $vehicle->id, 'payment_method' => 'CARD_DEMO', 'handover' => $this->purchaseHandover()])->assertCreated()->json('data.id');
     }
 
     public function test_dashboard_is_scoped_and_fleet_is_a_partition(): void
@@ -179,7 +179,7 @@ class MerchantDashboardTest extends TestCase
         $this->getJson('/api/v1/merchant/clients?shop_id='.$this->shop->id)->assertOk()->assertJsonPath('data.0.operations_count', 1);
         $this->getJson('/api/v1/merchant/orders?kind=sale')->assertOk()->assertJsonCount(0, 'data');
         $this->getJson('/api/v1/merchant/reservations?rentals=1')->assertOk()->assertJsonCount(0, 'data');
-        $this->getJson('/api/v1/merchant/reservations?status=confirmed&q='.urlencode($client->email))->assertOk()->assertJsonCount(1,'data');
-        $this->getJson('/api/v1/merchant/dashboard?shop_id='.$this->shop->id)->assertOk()->assertJsonPath('data.pending_reservations',0)->assertJsonPath('data.orders_total',0);
+        $this->getJson('/api/v1/merchant/reservations?status=confirmed&q='.urlencode($client->email))->assertOk()->assertJsonCount(1, 'data');
+        $this->getJson('/api/v1/merchant/dashboard?shop_id='.$this->shop->id)->assertOk()->assertJsonPath('data.pending_reservations', 0)->assertJsonPath('data.orders_total', 0);
     }
 }

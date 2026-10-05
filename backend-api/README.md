@@ -116,3 +116,9 @@ Téléphones : giggsey/libphonenumber-for-php ; pays et devise : référentiel e
 
 ### Démarrage local Windows et uploads
 Exécuter `./start-local.ps1` depuis backend-api (PHP XAMPP par défaut, paramètre -Php disponible), après arrêt de l’ancien serveur sur le port 8000. Ce lanceur ouvre PHP en arrière-plan avec upload_tmp_dir sous storage/app/upload-tmp, sans modifier le php.ini global. Il évite les notices PHP de repli vers un dossier temporaire système qui corrompaient les réponses JSON des uploads sur ce poste. Logs et PID : storage/logs/local-server*. Aucun doublon de serveur ne doit être lancé.
+
+
+## Phase 7 — reçus
+Moteur local barryvdh/laravel-dompdf 3.1.2 (Dompdf 3.1.6) verrouillé dans composer.lock. Installation habituelle Composer, aucun service externe. Logo officiel JPEG local, DejaVu Sans embarquée ; pas besoin d’activer GD globalement pour le rendu.
+`php artisan migrate`, `php artisan db:seed --class=ReceiptDemoSeeder`, `php artisan test`.
+Le seed complète le catalogue démo existant avec quatre unités/opérations dédiées. Lecture/PDF privés uniquement. [Cycle et contrats](../docs/RECEIPTS.md).

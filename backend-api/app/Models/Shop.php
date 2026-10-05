@@ -13,6 +13,8 @@ class Shop extends Model
 {
     use SoftDeletes;
 
+    public array $publicVehicleIdsForBroadcast = [];
+
     protected $guarded = ['id', 'merchant_id', 'slug', 'is_demo', 'logo_path', 'cover_path'];
 
     protected $casts = ['status' => ShopStatus::class, 'is_demo' => 'boolean', 'opening_hours' => 'array'];

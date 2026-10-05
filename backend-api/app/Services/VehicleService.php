@@ -42,6 +42,7 @@ class VehicleService
             }
             if (! $data['is_for_sale']) {
                 $data['sale_price_minor'] = null;
+                $data['negotiation_enabled'] = false;
             }
             if (! $data['is_for_rent']) {
                 $data['rent_daily_minor'] = null;

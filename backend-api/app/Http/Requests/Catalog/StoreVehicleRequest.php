@@ -16,7 +16,7 @@ class StoreVehicleRequest extends FormRequest
     use LocationRules;
 
     public const EDITABLE = [
-        'vehicle_model_id', 'category_id', 'title', 'trim', 'year', 'condition', 'is_for_sale', 'is_for_rent',
+        'negotiation_enabled', 'vehicle_model_id', 'category_id', 'title', 'trim', 'year', 'condition', 'is_for_sale', 'is_for_rent',
         'sale_price_minor', 'rent_daily_minor', 'currency_code', 'mileage_km', 'fuel', 'transmission',
         'engine', 'horsepower', 'doors', 'seats', 'color', 'vin', 'license_plate', 'description',
         'country_code', 'city_id', 'district_id', 'latitude', 'longitude',
@@ -45,6 +45,7 @@ class StoreVehicleRequest extends FormRequest
             'shop_id' => $this->route('vehicle') ? ['prohibited'] : ['required', 'integer', Rule::exists('shops', 'id')->whereNull('deleted_at')],
             'vehicle_model_id' => ['required', 'integer', 'exists:vehicle_models,id'],
             'category_id' => ['required', 'integer', 'exists:categories,id'],
+            'negotiation_enabled' => ['sometimes', 'boolean'],
             'title' => ['sometimes', 'string', 'max:180'], 'trim' => ['nullable', 'string', 'max:100'],
             'year' => ['required', 'integer', 'between:1900,'.(now()->year + 1)],
             'condition' => ['required', Rule::enum(VehicleCondition::class)],

@@ -5,6 +5,7 @@ export const moneyOf = r => ({ amount_minor:r.total_minor, currency:r.currency, 
 export const offerLabel = v => v.offer_types?.includes('sale') && v.offer_types?.includes('rent') ? 'Vente + location' : v.offer_types?.includes('sale') ? 'À vendre' : 'À louer'
 export function vehiclePayload(form, shop, editing) {
   const result = { ...form, vehicle_model_id:form.vehicle_model_id, is_for_sale:form.offer !== 'rental', is_for_rent:form.offer !== 'sale' }
+  result.negotiation_enabled = result.is_for_sale && !!form.negotiation_enabled
   result.sale_price_minor = result.is_for_sale ? majorToMinor(form.sale, shop.currency.minor_unit) : null
   result.rent_daily_minor = result.is_for_rent ? majorToMinor(form.rent, shop.currency.minor_unit) : null
   if (result.is_for_sale && (!result.sale_price_minor || BigInt(result.sale_price_minor) <= 0n)) throw new Error('Le prix de vente est obligatoire et doit être positif.')

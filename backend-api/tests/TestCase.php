@@ -6,6 +6,11 @@ use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
+    protected function purchaseHandover(): array
+    {
+        return ['mode' => 'self', 'scheduled_local' => now()->addDays(3)->startOfDay()->format('Y-m-d\\TH:i'), 'contact_name' => 'Client QA', 'contact_phone' => '+2250701020304'];
+    }
+
     public function createApplication()
     {
         $app = parent::createApplication();

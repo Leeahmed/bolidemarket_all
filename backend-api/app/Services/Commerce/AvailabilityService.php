@@ -6,6 +6,7 @@ use App\Enums\InventoryStatus;
 use App\Exceptions\CommerceConflict;
 use App\Models\Order;
 use App\Models\Reservation;
+use App\Models\User;
 use App\Models\Vehicle;
 use App\Models\VehicleBlock;
 use Carbon\CarbonImmutable;
@@ -72,10 +73,10 @@ class AvailabilityService
         $blocks = VehicleBlock::where('vehicle_id', $vehicle->id)->where('kind', 'hold')->whereNull('released_at')->where('expires_at', '<=', now())->lockForUpdate()->get();
         foreach ($blocks as $block) {
             if ($block->reservation_id) {
-                Reservation::whereKey($block->reservation_id)->where('status', 'pending')->update(['status' => 'expired']);
+                Reservation::whereKey($block->reservation_id)->where('status', 'pending')->first()?->update(['status' => 'expired']);
             }
             if ($block->order_id) {
-                Order::whereKey($block->order_id)->where('status', 'pending')->update(['status' => 'cancelled', 'cancellation_reason' => 'expired']);
+                Order::whereKey($block->order_id)->where('status', 'pending')->first()?->update(['status' => 'cancelled', 'cancellation_reason' => 'expired']);
             }
             $block->update(['released_at' => now()]);
         }
@@ -89,11 +90,12 @@ class AvailabilityService
         }
     }
 
-    public function snapshots(Vehicle $vehicle): array
+    public function snapshots(Vehicle $vehicle, ?User $buyer = null): array
     {
         return [
-            'vehicle_snapshot' => ['id' => (string) $vehicle->id, 'reference' => $vehicle->reference, 'slug' => $vehicle->slug, 'title' => $vehicle->title, 'brand' => $vehicle->vehicleModel->brand->name, 'model' => $vehicle->vehicleModel->name, 'year' => $vehicle->year],
-            'seller_snapshot' => ['id' => (string) $vehicle->shop_id, 'name' => $vehicle->shop->name, 'slug' => $vehicle->shop->slug, 'address' => $vehicle->shop->address, 'timezone' => $vehicle->shop->timezone],
+            'vehicle_snapshot' => ['id' => (string) $vehicle->id, 'reference' => $vehicle->reference, 'slug' => $vehicle->slug, 'title' => $vehicle->title, 'brand' => $vehicle->vehicleModel->brand->name, 'model' => $vehicle->vehicleModel->name, 'year' => $vehicle->year, 'trim' => $vehicle->trim, 'category' => $vehicle->category?->label],
+            'seller_snapshot' => ['id' => (string) $vehicle->shop_id, 'name' => $vehicle->shop->name, 'slug' => $vehicle->shop->slug, 'address' => $vehicle->shop->address, 'timezone' => $vehicle->shop->timezone, 'email' => $vehicle->shop->email, 'phone' => $vehicle->shop->phone, 'country' => $vehicle->shop->country?->name, 'city' => $vehicle->shop->city?->name, 'district' => $vehicle->shop->district?->name],
+            ...($buyer ? ['buyer_snapshot' => ['name' => $buyer->name, 'first_name' => $buyer->first_name, 'last_name' => $buyer->last_name, 'email' => $buyer->email, 'phone' => $buyer->phone, 'country' => $buyer->country?->name, 'city' => $buyer->city?->name]] : []),
         ];
     }
 }

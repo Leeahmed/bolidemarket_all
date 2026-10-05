@@ -14,6 +14,10 @@ const messages = {
   429: 'Trop de tentatives. Patientez un instant avant de réessayer.',
 }
 const conflicts = {
+  NEGOTIATION_DISABLED: 'Le vendeur n’accepte plus de propositions pour cette annonce.',
+  OFFER_EXISTS: 'Une proposition est déjà en cours pour ce véhicule. Consultez vos propositions.',
+  OFFER_UNAVAILABLE: 'Cette proposition a expiré ou n’est plus utilisable. Consultez vos propositions.',
+  OFFER_STALE: 'L’annonce a changé. Une nouvelle proposition est nécessaire.',
   VEHICLE_UNAVAILABLE: 'Ce véhicule n’est plus disponible pour cette demande.',
   QUOTE_EXPIRED: 'Le devis a expiré. Demandez un nouveau résumé.',
   PRICE_CHANGED: 'Le tarif a changé. Vérifiez le nouveau prix avant de continuer.',

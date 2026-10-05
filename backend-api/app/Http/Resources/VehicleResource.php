@@ -24,6 +24,7 @@ class VehicleResource extends JsonResource
             'year' => $this->year, 'condition' => $this->condition->value,
             'category' => new ReferenceResource($this->category),
             'offer_types' => array_values(array_filter([$this->is_for_sale ? ListingType::SALE->value : null, $this->is_for_rent ? ListingType::RENTAL->value : null])),
+            'negotiation_enabled' => $this->is_for_sale && $this->negotiation_enabled,
             'sale_price' => $this->is_for_sale ? $this->money($this->sale_price_minor) : null,
             'rental_daily_price' => $this->is_for_rent ? $this->money($this->rent_daily_minor, 'day') : null,
             'mileage_km' => $this->mileage_km, 'fuel' => $this->fuel->value, 'transmission' => $this->transmission->value,

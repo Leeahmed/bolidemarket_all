@@ -3,3 +3,6 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.vehicle-card:hover{transform:none}}
 
 .quick-search input:not([type=checkbox]),.main-search input:not([type=checkbox]){background:transparent;color:var(--ivory);border:0;margin-top:0}
+
+/* Keep the browser canvas covered and prevent elastic scrolling at page edges. */
+html,body{overscroll-behavior-y:none}html{background:#0B0D0F}body{min-height:100vh;background:var(--ivory,#F5F3EE)}

@@ -60,7 +60,7 @@ class ClientCommerceDemoSeeder extends Seeder
                 }
                 if ($kind === 'sale' && ! Order::where('vehicle_id', $vehicle->id)->exists()) {
                     $service = app(OrderService::class);
-                    $order = $service->create($client, ['vehicle_id' => $vehicle->id, 'payment_method' => 'CASH_DEMO']);
+                    $order = $service->create($client, ['vehicle_id' => $vehicle->id, 'payment_method' => 'CASH_DEMO', 'handover' => ['mode' => 'self', 'scheduled_local' => now()->addDays(3)->startOfDay()->format('Y-m-d\\TH:i'), 'contact_name' => $client->name, 'contact_phone' => '+2250701020304', 'notes' => 'Coordonnées fictives de démonstration.']]);
                     $order = $service->transition($merchant, $order, OrderStatus::CONFIRMED, true);
                     $service->transition($merchant, $order, OrderStatus::FULFILLED, true);
                 }

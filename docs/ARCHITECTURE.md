@@ -82,3 +82,20 @@ merchant-dashboard est une SPA Vue 3/Vite/Router autonome, Composition API sans 
 Sessions Sanctum HttpOnly/CSRF communes ; normalisation localhost/127.0.0.1 pour les liens et cookies locaux. Guards merchant, refus explicite des clients et redirection marketplace ; 401 relance le login, 403 donne un message contrôlé. Catalogue/create/edit partage le formulaire ; images envoyées séquentiellement après création et avant publication, identifiant conservé pour reprise sur erreur.
 
 Backend : MerchantDashboardController pour lecture agrégée/clients dérivés, filtres ajoutés aux contrôleurs existants, MerchantShopMediaController réutilise ProfileImages/RasterMetadata. Aucun changement aux services de transitions commerciales ; règles métier et autorisations restent côté API. Voir API/DATABASE et merchant-dashboard/README.md pour les contrats et commandes.
+
+## Reverb — phase 6B
+Reverb transporte les signaux métier entre l’API commune, la marketplace et le dashboard Pro. Les observers Vehicle/VehicleImage/Shop et Reservation/Order appellent RealtimePublisher ; celui-ci n’émet qu’après le commit externe via DB::afterCommit. Les callbacks sont abandonnés au rollback. Les transitions et verrous existants restent la seule autorité métier ; les mises à jour d’ordres liés et d’expiration utilisent maintenant les modèles pour passer par ces observers.
+
+Les événements nommés sont synchrones (ShouldBroadcastNow), sans worker de queue. Une panne de transport est capturée et journalisée sans données sensibles, avec timeout HTTP borné ; elle ne transforme pas une écriture SQL validée en erreur REST. Les messages ne sont pas un journal durable.
+
+Canal public marketplace : uniquement signaux de véhicules effectivement publics, avec tombstone minimal à la dépublication d’une annonce précédemment visible. Canaux privés merchant.{id} et user.{id} : autorisation Sanctum selon membership/identité et compte actif. Les payloads sont construits en liste blanche ; aucun modèle Eloquent complet ni paiement transmis. Origines locales explicites, aucun événement client accepté.
+
+web-shared/realtime.js centralise transport, abonnements, déduplication et changement d’identité ; chaque SPA fournit Echo/Pusher, son client HTTP et son environnement. Les composables assurent le nettoyage par page et regroupent les rafraîchissements. Les ressources concernées sont relues par REST, avec réconciliation à chaque reconnexion. Configuration, commandes et preuves : [REALTIME_TESTING](REALTIME_TESTING.md).
+
+
+## Phase 7 — reçus et rendu local
+ReceiptService appelé par DemoPaymentService dans la transaction métier existante ; aucune réécriture des transitions achat/location. Receipt/ReceiptType/ReceiptPolicy, contrôleur de lecture fin et ReceiptResource. Données figées dès la demande puis copiées au reçu, sans relecture des profils lors du rendu.
+
+ReceiptPdfService sépare rendu Blade/DomPDF du métier ; génération synchrone à la demande dans ce lot, sans cache/queue/service externe. Données échappées, assets locaux, accès distant/PHP/JS du moteur désactivés. Le PDF n’est jamais stocké publiquement.
+
+Composants Vue partagés web-shared/ReceiptDocument, ReceiptActions et ReceiptsBrowser ; services HTTP et auth existants injectés par chaque SPA. Vue dédupliqué dans Vite. Listes/détails/confirmation utilisent REST, les événements commerciaux existants déclenchent les relectures. Contrats : [RECEIPTS](RECEIPTS.md).

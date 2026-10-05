@@ -21,6 +21,8 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'price_offer_id' => ['nullable', 'integer', 'min:1'],
+            'handover' => ['required', 'array:mode,scheduled_local,contact_name,contact_phone,address,city,latitude,longitude,notes'],
             'vehicle_id' => ['required', 'integer', 'min:1'],
             'payment_method' => ['required', Rule::enum(DemoPaymentMethod::class)],
             'expected_price_minor' => ['sometimes', 'integer', 'min:0', 'max:99999999999999'],

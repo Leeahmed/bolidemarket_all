@@ -94,7 +94,7 @@ class ClientCommerceTest extends TestCase
 
     private function buy(array $extra = [], ?string $key = null)
     {
-        return $this->withHeader('Idempotency-Key', $key ?? (string) Str::uuid())->postJson('/api/v1/orders', array_replace(['vehicle_id' => $this->vehicle->id, 'payment_method' => 'CARD_DEMO'], $extra));
+        return $this->withHeader('Idempotency-Key', $key ?? (string) Str::uuid())->postJson('/api/v1/orders', array_replace(['vehicle_id' => $this->vehicle->id, 'payment_method' => 'CARD_DEMO', 'handover' => $this->purchaseHandover()], $extra));
     }
 
     private function merchantReservation(string $id, string $action)

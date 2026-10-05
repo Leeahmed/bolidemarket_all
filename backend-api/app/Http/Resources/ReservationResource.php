@@ -13,6 +13,7 @@ class ReservationResource extends JsonResource
         $expired = $this->status === ReservationStatus::PENDING && $this->expires_at?->isPast();
 
         return [
+            'receipt_reference' => $this->whenLoaded('order', fn () => $this->order?->receipt?->reference),
             'customer' => $this->when($request->is('api/v1/merchant/*') && $this->relationLoaded('customer'), fn () => $this->customer ? ['id' => (string) $this->customer->id, 'name' => $this->customer->name, 'email' => $this->customer->email, 'phone' => $this->customer->phone] : null),
             'id' => (string) $this->id, 'reference' => $this->reference, 'vehicle' => $this->vehicle_snapshot, 'shop' => $this->seller_snapshot,
             'starts_at' => $this->starts_at->toISOString(), 'ends_at' => $this->ends_at->toISOString(), 'shop_timezone' => $this->shop_timezone, 'billable_days' => $this->billable_days,

@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "restWhileReverbStopped": true,
+  "reconciledAfterRestart": true,
+  "reads": 2,
+  "errors": []
+}

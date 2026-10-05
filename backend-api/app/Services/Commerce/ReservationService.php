@@ -67,7 +67,7 @@ class ReservationService
             }
             $this->availability->assertFree($vehicle, $quote->starts_at, $quote->ends_at);
             $expires = now()->addMinutes(config('commerce.hold_minutes'));
-            $reservation = Reservation::create($this->availability->snapshots($vehicle) + [
+            $reservation = Reservation::create($this->availability->snapshots($vehicle, $user) + [
                 'reference' => 'BM-RSV-'.Str::ulid(), 'user_id' => $user->id, 'vehicle_id' => $vehicle->id, 'shop_id' => $vehicle->shop_id, 'quote_id' => $quote->id,
                 'starts_at' => $quote->starts_at, 'ends_at' => $quote->ends_at, 'shop_timezone' => $quote->shop_timezone,
                 'daily_price_minor' => $quote->daily_price_minor, 'billable_days' => $quote->billable_days, 'subtotal_minor' => $quote->total_minor, 'fees_minor' => 0, 'total_minor' => $quote->total_minor,
@@ -109,7 +109,7 @@ class ReservationService
                 $order = Order::create(['reference' => 'BM-ORD-'.Str::ulid(), 'user_id' => $reservation->user_id, 'vehicle_id' => $vehicle->id, 'shop_id' => $reservation->shop_id, 'reservation_id' => $reservation->id,
                     'kind' => 'rental', 'status' => OrderStatus::CONFIRMED, 'subtotal_minor' => $reservation->subtotal_minor, 'fees_minor' => 0, 'total_minor' => $reservation->total_minor,
                     'currency_code' => $reservation->currency_code, 'minor_unit' => $reservation->minor_unit, 'payment_method_demo' => $reservation->payment_method_demo,
-                    'vehicle_snapshot' => $reservation->vehicle_snapshot, 'seller_snapshot' => $reservation->seller_snapshot,
+                    'buyer_snapshot' => $reservation->buyer_snapshot, 'vehicle_snapshot' => $reservation->vehicle_snapshot, 'seller_snapshot' => $reservation->seller_snapshot,
                     'conditions_version' => $reservation->conditions_version, 'confirmed_at' => now(), 'is_demo' => true]);
                 $this->payments->pay($order, $actor);
                 $block->update(['kind' => BlockKind::RENTAL, 'expires_at' => null]);
@@ -123,10 +123,10 @@ class ReservationService
             } elseif ($target === ReservationStatus::COMPLETED) {
                 $vehicle->inventory_status = InventoryStatus::AVAILABLE;
                 $block->update(['released_at' => now()]);
-                $reservation->order()->update(['status' => OrderStatus::FULFILLED->value, 'fulfilled_at' => now()]);
+                $reservation->order?->update(['status' => OrderStatus::FULFILLED->value, 'fulfilled_at' => now()]);
             } else {
                 $block->update(['released_at' => now()]);
-                $reservation->order()->update(['status' => OrderStatus::CANCELLED->value, 'cancellation_reason' => 'reservation_cancelled']);
+                $reservation->order?->update(['status' => OrderStatus::CANCELLED->value, 'cancellation_reason' => 'reservation_cancelled']);
             }
             if ($vehicle->isDirty()) {
                 $vehicle->version++;

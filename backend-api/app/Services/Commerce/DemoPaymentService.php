@@ -25,6 +25,9 @@ class DemoPaymentService
             CommerceAudit::record($actor, $payment, 'demo_paid');
         }
 
+        app(ReceiptService::class)->issue($payment);
+        $order->unsetRelation('receipt');
+
         return $payment;
     }
 }

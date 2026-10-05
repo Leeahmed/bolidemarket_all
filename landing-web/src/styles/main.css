@@ -21,3 +21,6 @@
 
 .store-buttons button{width:170px;padding:0;border:0;background:transparent;min-height:54px}.store-buttons button img{width:100%;height:auto;border-radius:var(--radius)}.pro-section h2{max-width:560px}
 
+
+/* Keep the browser canvas covered and prevent elastic scrolling at page edges. */
+html,body{overscroll-behavior-y:none}html{background:#0B0D0F}body{min-height:100vh;background:var(--ivory,#F5F3EE)}

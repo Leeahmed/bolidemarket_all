@@ -18,7 +18,7 @@ import RecordPage from '../src/pages/RecordPage.vue'
 vi.mock('../src/services/api', () => ({ request: vi.fn(), post: vi.fn(), csrfCookie: vi.fn(), get: vi.fn() }))
 vi.mock('../src/services/commerceService', () => ({ commerceService: { availability: vi.fn(), quote: vi.fn(), reserve: vi.fn(), order: vi.fn(), detail: vi.fn(), cancel: vi.fn() } }))
 vi.mock('../src/services/vehicleService', () => ({ vehicleService: { detail: vi.fn() } }))
-const user = { id: '1', first_name: 'Client', name: 'Client Demo', email: 'client@example.test', email_verified_at: '2026-01-01', role: 'customer' }
+const user = { id: '1', first_name: 'Client', name: 'Client Demo', phone: '+2250701020304', email: 'client@example.test', email_verified_at: '2026-01-01', role: 'customer' }
 const car = { ...fixtures.vehicle.data, id: '5', slug: 'demo-car', inventory_status: 'available', sale_price: { amount_minor: '18500000', currency: 'XOF', minor_unit: 0 }, rental_daily_price: { amount_minor: '45000', currency: 'XOF', minor_unit: 0 } }
 const availability = { timezone: 'Africa/Abidjan', inventory_status: 'available', from: '2026-10-01T00:00:00Z', to: '2027-10-01T00:00:00Z', intervals: [{ starts_at: '2026-10-10T00:00:00Z', ends_at: '2026-10-13T00:00:00Z' }] }
 const quote = { id: '4', starts_at: '2026-10-05T00:00:00Z', ends_at: '2026-10-09T00:00:00Z', shop_timezone: 'Africa/Abidjan', billable_days: 4, daily_price_minor: '45000', total_minor: '180000', currency: 'XOF', minor_unit: 0, expires_at: '2026-10-01T12:05:00Z', conditions_version: 'demo-v1' }
@@ -136,6 +136,7 @@ describe('Disponibilités réelles et calendrier', () => {
  })
 })
 async function summary(wrapper, rental = false) {
+ if (!rental) await wrapper.get('input[type="datetime-local"]').setValue('2026-10-05T10:00')
  if (rental) {
    const calendar = wrapper.getComponent(DateCalendar)
    calendar.vm.$emit('update:start', '2026-10-05'); calendar.vm.$emit('update:end', '2026-10-09'); await nextTick()
@@ -156,7 +157,7 @@ describe('Réservation et achat', () => {
    const { wrapper, router } = await page(CheckoutPage)
    await summary(wrapper)
    await wrapper.findAll('button').find(x => x.text() === 'Confirmer l’achat').trigger('click'); await flushPromises()
-   expect(commerceService.order).toHaveBeenCalledWith({ vehicle_id: '5', payment_method: 'MOBILE_MONEY_DEMO', expected_price_minor: '18500000', currency: 'XOF' }, expect.any(String))
+   expect(commerceService.order).toHaveBeenCalledWith({ vehicle_id: '5', payment_method: 'MOBILE_MONEY_DEMO', expected_price_minor: '18500000', currency: 'XOF', handover: expect.objectContaining({ mode: 'self', scheduled_local: '2026-10-05T10:00', contact_phone: '+2250701020304' }) }, expect.any(String))
    expect(router.currentRoute.value.path).toBe('/order-confirmation/9')
  })
  it('empêche le double clic et rejoue la même clé après un résultat réseau incertain', async () => {
@@ -211,3 +212,44 @@ describe('Réservation et achat', () => {
  })
 })
 
+
+describe('Remise et prix négocié', () => {
+ it('exige un rendez-vous avant de passer au paiement', async () => {
+  const {wrapper}=await page(CheckoutPage)
+  await wrapper.findAll('button').find(x=>x.text()==='Voir le résumé').trigger('click')
+  await flushPromises()
+  expect(wrapper.text()).toContain('Renseignez la date')
+  expect(commerceService.order).not.toHaveBeenCalled()
+ })
+ it('exige une adresse pour la livraison et transmet les coordonnées du tiers', async () => {
+  const {wrapper}=await page(CheckoutPage)
+  await wrapper.get('input[type="datetime-local"]').setValue('2026-10-05T10:00')
+  await wrapper.get('.handover-form select').setValue('delivery')
+  await wrapper.findAll('button').find(x=>x.text()==='Voir le résumé').trigger('click')
+  await flushPromises()
+  expect(wrapper.text()).toContain('Renseignez la ville')
+  await wrapper.get('.handover-form select').setValue('proxy')
+  await wrapper.get('.handover-form input[maxlength="120"]').setValue('Mandataire QA')
+  await wrapper.get('input[type="tel"]').setValue('+2250501020304')
+  await summary(wrapper)
+  await wrapper.findAll('button').find(x=>x.text()==='Confirmer l’achat').trigger('click')
+  await flushPromises()
+  expect(commerceService.order.mock.calls[0][0].handover).toMatchObject({mode:'proxy',contact_name:'Mandataire QA',contact_phone:'+2250501020304',address:'',latitude:null})
+ })
+ it('applique seulement le prix de la proposition acceptée obtenue du serveur', async () => {
+  vehicleService.detail.mockResolvedValueOnce({data:{...car,negotiation_enabled:true}})
+  get.mockResolvedValueOnce({data:{id:'12',vehicle_id:'5',status:'accepted',amount_minor:'17000000',currency:'XOF',minor_unit:0,expires_at:'2026-10-02T12:00:00Z'}})
+  const {wrapper}=await page(CheckoutPage,'/vehicles/demo-car/buy?offer=12')
+  await summary(wrapper)
+  await wrapper.findAll('button').find(x=>x.text()==='Confirmer l’achat').trigger('click')
+  await flushPromises()
+  expect(commerceService.order.mock.calls[0][0]).toMatchObject({price_offer_id:'12',expected_price_minor:'17000000'})
+ })
+ it('bloque une proposition expirée sans envoyer une commande au prix public', async () => {
+  get.mockResolvedValueOnce({data:{id:'12',vehicle_id:'5',status:'expired',expires_at:'2026-09-30T12:00:00Z'}})
+  const {wrapper}=await page(CheckoutPage,'/vehicles/demo-car/buy?offer=12')
+  expect(wrapper.text()).toContain('Cette proposition n’est plus utilisable')
+  expect(wrapper.findAll('button').find(x=>x.text()==='Voir le résumé').attributes('disabled')).toBeDefined()
+  expect(commerceService.order).not.toHaveBeenCalled()
+ })
+})

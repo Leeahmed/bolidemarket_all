@@ -15,12 +15,14 @@ class Vehicle extends Model
 {
     use SoftDeletes;
 
+    public bool $wasPublicForBroadcast = false;
+
     protected $guarded = ['id', 'reference', 'slug', 'publication_status', 'inventory_status', 'published_at', 'version', 'is_demo', 'is_featured', 'is_certified'];
 
     protected $casts = [
         'fuel' => FuelType::class, 'transmission' => Transmission::class, 'condition' => VehicleCondition::class,
         'publication_status' => PublicationStatus::class, 'inventory_status' => InventoryStatus::class,
-        'is_for_sale' => 'boolean', 'is_for_rent' => 'boolean', 'is_demo' => 'boolean',
+        'negotiation_enabled' => 'boolean', 'is_for_sale' => 'boolean', 'is_for_rent' => 'boolean', 'is_demo' => 'boolean',
         'is_featured' => 'boolean', 'is_certified' => 'boolean', 'published_at' => 'datetime',
         'sale_price_minor' => 'string', 'rent_daily_minor' => 'string',
     ];

@@ -144,3 +144,26 @@ Migration additive 2026_10_04_000000_add_shop_opening_hours : shops.opening_hour
 Les clients professionnels sont une projection de reservations et orders(kind=sale) par shop_id autorisé, regroupée par user_id ; nombre d’interactions et dernière date de demande, sans double comptage des commandes rental. Agrégats et listes Pro filtrent is_demo selon la boutique. Le dashboard calcule ses compteurs/listes dans une transaction de lecture cohérente ; le graphique compte les ventes fulfilled des six mois UTC glissants par mois, sans extrapoler les chiffres de la maquette.
 
 Statuts et snapshots financiers inchangés. Les coordonnées éditoriales/horaires de boutique n’altèrent pas les snapshots transactionnels ; les changements sensibles restent contrôlés sous verrous véhicule puis boutique. Tout changement de pays après véhicule (y compris supprimé), commande ou réservation est interdit.
+
+
+## Complément — propositions et remise (4 octobre 2026)
+Migration additive `2026_10_04_120000_add_price_offers_and_order_handover`, sans reset :
+- `vehicles.negotiation_enabled` bool, défaut false ; remis à false si le véhicule n’est plus à vendre.
+- `price_offers` : FK vehicle_id/shop_id/user_id, status, amount_minor/asking_price_minor entiers non signés, currency_code/minor_unit, vehicle_version, snapshots véhicule/vendeur, expires_at/responded_at, is_demo, timestamps. Index (user_id,vehicle_id,status) et (shop_id,status).
+- États persistés pending → accepted/rejected ; accepted → consumed lors de création de commande. expired est dérivé en lecture pour pending/accepted dépassant expires_at ; aucun job requis. Durée pending 24 h, accepted 24 h depuis la réponse. Aucun vehicle_block créé par une proposition.
+- `orders.price_offer_id` FK nullable UNIQUE : au plus une commande pour une proposition. `orders.handover` JSON nullable pour historique/location ; obligatoire pour toute nouvelle vente par le service et l’API.
+- handover fige mode self/proxy/delivery, scheduled_at UTC, timezone boutique, contact_name, contact_phone E.164, address/city, latitude/longitude et notes. Adresse/GPS sont null pour les retraits. Aucune position en temps réel, aucun champ arbitraire.
+- Création/réponse/achat sous transaction et verrou véhicule commun ; réponse/consommation verrouillent aussi la proposition. Une offre acceptée exige même client, véhicule, devise et version, non expirée, négociation encore activée. Création d’une commande et consommation atomiques ; rollback remet tout en état. Idempotence de création existante réutilisée.
+- Prix commande et paiement DEMO déduits côté serveur de la proposition acceptée ou du tarif public. Confirmation conserve les contrôles d’allocation. Décision Pro auditée ; événements privés après commit sans prix, contact ni position.
+
+
+## Phase 7 — reçus livrés
+Migration additive 2026_10_05_000000_create_receipts. orders/reservations.buyer_snapshot JSON nullable pour compatibilité historique. Les nouveaux snapshots vendeur/véhicule ajoutent coordonnées publiques/localisation/catégorie ; la commande rental copie le buyer_snapshot de sa réservation.
+
+receipts : id ; reference UNIQUE (BM-RCP-année-ULID) ; payment_id FK UNIQUE ; order_id FK UNIQUE ; user_id/shop_id FK ; type sale/rental (enum PHP ReceiptType) ; currency_code/minor_unit ; subtotal_minor/fees_minor/total_minor entiers non signés ; payment_method/payment_status ; is_demo ; issued_at ; buyer_snapshot/seller_snapshot/vehicle_snapshot/transaction_snapshot JSON ; timestamps. Index (user_id,issued_at), (shop_id,issued_at). Aucune colonne PDF binaire/storage_key requise.
+
+Une commande existe déjà pour les deux familles : order_id → orders.reservation_id pour location. Pas de morphisme inutile. Le modèle conceptuel payment/refund plus haut reste une cible : refund, avoirs et corrections non implémentés. Schéma effectif de ce lot limité au paiement DEMO réussi.
+
+ReceiptService verrouille payment_id, retourne l’existant avant toute nouvelle émission ; contraintes uniques et transaction de confirmation rendent l’émission idempotente/atomique. Montant/devise du paiement vérifiés contre l’ordre. Reçu immuable côté modèle/API ; pas de cascade effaçant les reçus. L’annulation commerciale ultérieure ne réécrit aucun instantané.
+
+Voir [RECEIPTS](RECEIPTS.md) pour données historiques, seed et sécurité.

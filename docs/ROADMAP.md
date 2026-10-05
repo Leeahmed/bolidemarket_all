@@ -15,9 +15,15 @@ Chaque phase est un lot vérifiable, pas une autorisation de tout réaliser. Ide
 | 10 — QA et polish | Parcours complets, régression visuelle, responsive, accessibilité, performance, exploitation | Tests métier et concurrence, sauvegarde/restauration, démos isolées, configuration de production et points métier ouverts résolus |
 
 ## Prochain lot autorisable
-**Phases 1, 2, 3A, 3B, 4, 5A, 5B.1, 5B.2, UX Polish 1 et 6A réalisées ; prochaine phase recommandée : 6B — Laravel Reverb et synchronisation client/Pro**, uniquement sur nouvelle demande. Le lot 6B reprend le périmètre temps réel de la phase 7 initiale ; il n’est pas commencé. La phase 5A couvre le catalogue Vue, le détail, les boutiques et la localisation. La phase 5B.1 livre uniquement le backend favoris/devis/disponibilité/réservations/commandes, les transitions professionnelles et les paiements DEMO : migration exécutée, seed dédié et suite backend 143 tests passants. La phase 5B.2 livre les interfaces client Vue, sessions, favoris et parcours transactionnels DEMO : 45 tests frontend passants et 42 contrôles responsive. Le dashboard Pro 6A est livré avec parc/photos, opérations DEMO, clients dérivés et boutique. Paiements réels, PDF, realtime et Flutter restent différés.
+**Phases 1, 2, 3A, 3B, 4, 5A, 5B.1, 5B.2, UX Polish 1, 6A, 6B et 7 réalisées ; prochaine phase recommandée : 8 — application mobile Flutter client**, uniquement sur nouvelle demande. La numérotation de la table initiale ci-dessus est historique : le client a avancé le realtime en 6B et place maintenant les reçus en phase 7. Reverb, les signaux après commit, les canaux privés et la synchronisation des deux SPA sont livrés ; voir CURRENT_STATUS et REALTIME_TESTING pour les preuves. Flutter, paiements réels, chat, push, QR et administration globale restent différés.
 
 Ordre de reprise : lire CURRENT_STATUS et les contrats DATABASE/API du prochain lot, inspecter le backend existant et réutiliser son authentification, ses rôles et ses Policies. Ne pas réinstaller Laravel ni les dépendances déjà verrouillées ; réutiliser la landing Vue et ne pas démarrer les autres clients avant leur phase.
 
 Les transactions réelles attendent les décisions de paiement, pays, conditions de location/caution/annulation et vérification Pro. Le socle et les simulations peuvent avancer sans inventer ces décisions. Aucun planning calendaire artificiel : clore un lot sur ses preuves de fonctionnement, puis mettre à jour [CURRENT_STATUS](CURRENT_STATUS.md).
 
+
+## Ajustement transversal du 4 octobre 2026
+À la demande du client : cohérence des médias Pro, correction du rebond de page, négociation sur opt-in vendeur avec proposition séparée et collecte privée des modalités de remise à l’achat. Contrats et vérifications dans MASTER_SPEC, API, DATABASE et CURRENT_STATUS. Ce lot n’active pas l’organisation des chauffeurs ni les paiements réels et ne change pas la prochaine phase autorisable.
+
+## Phase 7 — livrée le 5 octobre 2026
+Reçus vente/location DEMO immuables, PDF local, lecture/téléchargement/impression privés client et Pro. Tests et rendu visuel vérifiés, voir CURRENT_STATUS et RECEIPTS. Phase 8 Flutter client à engager uniquement sur prochaine demande. Aucun QR, justificatif fiscal ou paiement réel.

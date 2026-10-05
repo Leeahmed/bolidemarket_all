@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "vehicle": "27",
+  "order": "9",
+  "price_offer": "2",
+  "errors": [],
+  "overscroll": [
+    {
+      "url": "http://127.0.0.1:5174",
+      "html": "none",
+      "body": "none",
+      "background": "rgb(11, 13, 15)",
+      "overflow": false
+    },
+    {
+      "url": "http://127.0.0.1:5175",
+      "html": "none",
+      "body": "none",
+      "background": "rgb(245, 243, 238)",
+      "overflow": false
+    },
+    {
+      "url": "http://127.0.0.1:5173",
+      "html": "none",
+      "body": "none",
+      "background": "rgb(11, 13, 15)",
+      "overflow": false
+    }
+  ],
+  "scenarios": [
+    "pro-shop-media",
+    "seller-opt-in",
+    "offer-rejected",
+    "offer-accepted",
+    "negotiated-order",
+    "delivery-details",
+    "merchant-handover",
+    "mobile-layout",
+    "overscroll",
+    "order-cancelled"
+  ]
+}

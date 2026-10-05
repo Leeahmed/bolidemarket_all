@@ -264,3 +264,69 @@ Compléments non cassants aux contrats existants :
 - Profil Pro réutilise PATCH /me/profile et POST /me/avatar ; aucun endpoint concurrent.
 
 Transitions, paiements DEMO, devises, disponibilité, Policies et verrouillage véhicule des phases précédentes conservés. Pas de temps réel, PDF, paiement réel ou nouvel endpoint de transaction.
+
+## Phase 6B — signaux Reverb
+POST /api/v1/broadcasting/auth, authentifié Sanctum + active, corps {socket_id, channel_name}. Sessions SPA : CSRF identique aux autres mutations. Retour 200 signature du protocole ; 401 invité, 403 canal non autorisé. channel_name utilise private-merchant.{merchantId} ou private-user.{userId} ; le préfixe private- est géré par Echo. merchant exige rôle merchant et appartenance ; user exige identité exacte. Aucun endpoint métier remplacé.
+
+Les événements portent {event_id UUID, type, occurred_at UTC, data}. type = nom explicite :
+- VehicleCreated, VehicleUpdated, VehicleStatusChanged, VehiclePublished, VehicleUnpublished, VehicleImageUpdated, VehicleAvailabilityChanged.
+- ReservationCreated, ReservationConfirmed, ReservationCancelled, ReservationRejected, ReservationStarted, ReservationCompleted, ReservationExpired ; ReservationUpdated réservé à une autre mise à jour autorisée.
+- OrderCreated, OrderConfirmed, OrderCancelled, OrderCompleted ; OrderUpdated réservé à une autre mise à jour autorisée. OrderCompleted correspond au statut existant fulfilled.
+
+Payload véhicule : vehicle_id, slug, shop_id, version, changed_fields (noms publics autorisés). Canal merchant propriétaire ; marketplace uniquement si publié/visible, ou retrait d’une ancienne annonce publique. Aucun objet réservation/commande sur marketplace.
+Payload privé réservation/commande : id, shop_id, vehicle_id, status, version. Diffusion au merchant propriétaire et au user concerné uniquement. L’API fournit ensuite les détails autorisés. version est celle de la ressource, pas un compteur du transport ; event_id sert à la déduplication.
+
+Diffusion après commit externe ; rollback = aucun message. Messages éphémères, pas de garantie de replay. Une panne Reverb n’annule pas le succès REST ; les vues relisent leurs ressources après reconnexion. Configuration et scénarios : [REALTIME_TESTING](REALTIME_TESTING.md).
+
+
+## Complément — négociation et remise (4 octobre 2026)
+Toutes les routes ci-dessous sont sous `/api/v1`, session active Sanctum, CSRF pour écritures ; opérations commerciales soumises à canUseCommerce. Pro limité aux memberships.
+
+| Méthode | Route | Contrat |
+|---|---|---|
+| POST | /price-offers | Idempotency-Key requis. Body vehicle_id, amount_minor (entier positif ≤ 99 999 999 999 999 et inférieur au prix public), currency (devise exacte annonce). Retour PriceOfferResource 201, replay 200. |
+| GET | /me/price-offers | Propositions du client courant ; vehicle_id facultatif, pagination page/per_page. |
+| GET | /me/price-offers/{id} | Proposition du client courant ; accès croisé 404. |
+| GET | /merchant/price-offers | Propositions reçues dans les boutiques autorisées ; shop_id facultatif, pagination. |
+| POST | /merchant/price-offers/{id}/respond | decision = accepted ou rejected. Pending non expirée uniquement, propriété vérifiée. |
+
+PriceOfferResource : id, vehicle_id, shop_id, snapshots vehicle/shop, status pending/accepted/rejected/expired/consumed, amount_minor/asking_price_minor chaînes entières, currency/minor_unit, expires_at/created_at, is_demo. customer.name uniquement dans la réponse Pro autorisée. Proposition valable 24 h puis, si acceptée, 24 h supplémentaires ; aucune réservation à l’acceptation.
+
+VehicleResource expose negotiation_enabled. Création/édition Pro accepte ce booléen dans les champs éditoriaux existants ; ignoré/remis à false en location seule, défaut false. Le formulaire Pro le présente à l’étape Offre.
+
+**Évolution du contrat POST /orders :** handover obligatoire pour les nouvelles ventes, price_offer_id facultatif. Champs autorisés handover :
+- mode : self, proxy ou delivery ;
+- scheduled_local : `YYYY-MM-DDTHH:mm`, futur dans le fuseau de la boutique (fourni par le serveur, jamais par le client) ;
+- contact_name (120), contact_phone (40 en entrée, normalisé E.164), requis ;
+- city (120) et address (500), requis pour delivery ;
+- latitude [-90,90] et longitude [-180,180], paire facultative ;
+- notes facultatives, maximum 1000.
+
+OrderResource privée ajoute price_offer_id et handover (scheduled_at UTC + timezone, nom/téléphone, adresse/position si livraison, notes). Les anciennes commandes et celles de location peuvent garder null. Le serveur calcule le total depuis l’offre acceptée ; expected_price_minor reste un contrôle, jamais une source de prix. Une proposition consommée ne se réutilise pas après annulation. Le replay de la même demande reste idempotent.
+
+Conflits 409 : NEGOTIATION_DISABLED, OFFER_EXISTS, OFFER_STALE (annonce modifiée avant acceptation), OFFER_UNAVAILABLE ; disponibilité/prix et erreurs 422 usuelles conservés. L’offre ne doit appartenir ni à un autre client ni à un autre véhicule. L’achat reste soumis aux mêmes verrous/disponibilités/paiements DEMO.
+
+Événements privés PriceOfferCreated/Accepted/Rejected/Consumed après commit, canaux merchant.{id} et user.{id}, payload minimal id/shop_id/vehicle_id/status ; aucun contact/GPS public. REST demeure la source de vérité.
+
+Profil Pro : logo/cover de ShopResource réutilisés ; changement photo par POST /merchant/shops/{id}/media kind=logo, couverture par la page boutique kind=cover. POST /me/avatar reste le contrat de l’avatar personnel et le repli pour un compte sans boutique.
+
+
+## Phase 7 — reçus privés et PDF
+Base /api/v1. Auth Sanctum + compte actif, rôle customer/merchant côté me ; rôle merchant + membership côté professionnel.
+
+| Méthode | Route | Résultat |
+|---|---|---|
+| GET | /me/receipts | Reçus de l’utilisateur, pagination page/per_page, filtre type sale/rental facultatif |
+| GET | /me/receipts/{reference} | ReceiptResource historique, sinon 404 |
+| GET | /me/receipts/{reference}/pdf | application/pdf, attachment par défaut |
+| GET | /merchant/receipts | Reçus des boutiques autorisées, shop_id/type facultatifs, pagination |
+| GET | /merchant/receipts/{reference} | Même document, scope professionnel puis Policy |
+| GET | /merchant/receipts/{reference}/pdf | Même PDF privé et autorisation |
+
+PDF : disposition=inline ou attachment exclusivement (autre valeur → 422), Content-Disposition avec BolideMarket_{reference}.pdf, Cache-Control private,no-store, nosniff. Limite 30/minute. Aucun endpoint public ou de mutation.
+
+ReceiptResource : reference, type, order_id, shop_id, currency/minor_unit, subtotal_minor/fees_minor/total_minor (chaînes entières), payment_method/payment_status, is_demo, issued_at ISO UTC, buyer/seller/vehicle/transaction (snapshots en liste blanche), demo_notice. Transaction inclut références commande/paiement, paid_at, conditions_version, price_offer_id, timezone ; location ajoute référence/ID réservation, starts_at/ends_at, days, daily_price_minor.
+
+OrderResource et ReservationResource ajoutent receipt_reference nullable quand disponible, pour les CTA confirmation/détail. Reçu émis après paiement DEMO réussi pendant la confirmation professionnelle. Ni pending, ni simple acceptation de proposition de prix ne produisent un reçu. Le reçu conserve le prix négocié réellement payé. Annulation sans remboursement : reçu historique inchangé.
+
+Détails de cycle, compatibilité historique et impression : [RECEIPTS](RECEIPTS.md).

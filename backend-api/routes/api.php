@@ -13,11 +13,17 @@ use App\Http\Controllers\MerchantShopController;
 use App\Http\Controllers\MerchantShopMediaController;
 use App\Http\Controllers\MerchantVehicleController;
 use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\PriceOfferController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\VerificationController;
 use App\Support\DemoMode;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
+
+Route::post('broadcasting/auth', fn (Request $request) => Broadcast::auth($request))->middleware(['auth:sanctum', 'active']);
 
 foreach (['countries', 'currencies', 'cities', 'districts', 'brands', 'models', 'categories', 'features'] as $referenceType) {
     Route::get($referenceType, [ReferenceController::class, 'index'])->defaults('referenceType', $referenceType);
@@ -32,6 +38,8 @@ Route::get('shops/{slug}', [CatalogController::class, 'shop']);
 Route::get('shops/{slug}/vehicles', [CatalogController::class, 'shopVehicles']);
 
 Route::prefix('merchant')->middleware(['auth:sanctum', 'active', 'role:merchant'])->group(function () {
+    Route::get('price-offers', [PriceOfferController::class, 'merchant']);
+    Route::post('price-offers/{offer}/respond', [PriceOfferController::class, 'respond']);
     Route::get('dashboard', [MerchantDashboardController::class, 'dashboard']);
     Route::get('clients', [MerchantDashboardController::class, 'clients']);
     Route::post('shops/{shop}/media', [MerchantShopMediaController::class, 'store']);
@@ -82,6 +90,9 @@ Route::middleware(['auth:sanctum', 'active', 'role:customer,merchant'])->group(f
     Route::delete('me/favorites/{vehicle}', [FavoriteController::class, 'destroy']);
     Route::post('rental-quotes', [ClientCommerceController::class, 'quote']);
     Route::post('reservations', [ClientCommerceController::class, 'reserve']);
+    Route::post('price-offers', [PriceOfferController::class, 'store']);
+    Route::get('me/price-offers/{offer}', [PriceOfferController::class, 'show']);
+    Route::get('me/price-offers', [PriceOfferController::class, 'mine']);
     Route::post('orders', [ClientCommerceController::class, 'order']);
     Route::get('me/reservations', [ClientCommerceController::class, 'reservations']);
     Route::get('me/reservations/{reservation}', [ClientCommerceController::class, 'reservation']);
@@ -101,4 +112,16 @@ Route::prefix('merchant')->middleware(['auth:sanctum', 'active', 'role:merchant'
     foreach (['confirm' => 'confirmed', 'fulfil' => 'fulfilled', 'cancel' => 'cancelled'] as $action => $target) {
         Route::post('orders/{order}/'.$action, [MerchantCommerceController::class, 'orderAction'])->defaults('target', $target);
     }
+});
+
+// Private, read-only receipts. Source is the immutable server snapshot.
+Route::prefix('me')->middleware(['auth:sanctum', 'active', 'role:customer,merchant'])->group(function () {
+    Route::get('receipts', [ReceiptController::class, 'index']);
+    Route::get('receipts/{reference}', [ReceiptController::class, 'show']);
+    Route::get('receipts/{reference}/pdf', [ReceiptController::class, 'pdf'])->middleware('throttle:30,1');
+});
+Route::prefix('merchant')->middleware(['auth:sanctum', 'active', 'role:merchant'])->group(function () {
+    Route::get('receipts', [ReceiptController::class, 'index']);
+    Route::get('receipts/{reference}', [ReceiptController::class, 'show']);
+    Route::get('receipts/{reference}/pdf', [ReceiptController::class, 'pdf'])->middleware('throttle:30,1');
 });

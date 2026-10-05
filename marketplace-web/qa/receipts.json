@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "reference": "BM-RCP-2026-01M44S1DE9QENEM534EC0BYKGF",
+  "errors": [],
+  "scenarios": [
+    "client-list",
+    "client-detail",
+    "backend-download",
+    "inline-print",
+    "mobile",
+    "confirmation-CTA",
+    "merchant-isolation",
+    "merchant-detail",
+    "merchant-download",
+    "merchant-print"
+  ]
+}

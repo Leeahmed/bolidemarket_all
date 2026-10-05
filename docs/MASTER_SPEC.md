@@ -6,7 +6,7 @@ BolideMarket rapproche clients et professionnels automobiles dans plusieurs pays
 
 **Validé :** nom, slogan, Direction A, palette, logo Triade, landing et aperçus associés, sélecteur Acheter/Louer, badges À vendre/À louer, prix de location par jour, gamme diversifiée.
 **MVP proposé :** catalogue multi-professionnels, comptes, favoris, comparaison, demande d'achat, réservation de location, gestion Pro, notifications, suivi des paiements et reçus.
-**Différé :** financement, assurance, enchères, livraison, panier multi-vendeurs, conversion automatique des devises, chat et suivi GPS en direct. Aucun paiement réel avant choix du prestataire et des règles commerciales.
+**Différé :** financement, assurance, enchères, orchestration et tarification automatique de livraison, panier multi-vendeurs, conversion automatique des devises, chat et suivi GPS en direct. Aucun paiement réel avant choix du prestataire et des règles commerciales.
 
 ## Modules
 | Module | Périmètre |
@@ -96,3 +96,16 @@ Le dashboard Pro Vue est branché sur l’API commune, avec sélection de boutiq
 Le parc conserve la partition available/rented/sold/other ; les réservations futures sont suivies séparément et maintenance reste incluse dans other. Aucune commande manuelle ne peut forcer vendu/loué. Les prix sont inférés du pays boutique, sans conversion. Les photos supportent JPG/PNG/WebP ; seule la photo principale est réorganisable via le contrat actuel. Les horaires ont une plage par jour. Les clients sont uniquement ceux ayant une réservation ou une vente dans la boutique, sans double compte de la commande rental.
 
 Les liens Pro/marketplace partagent la session locale et permettent toujours de revenir à l’annonce ou boutique publique. Reverb et la synchronisation client/Pro constituent le prochain lot 6B, seulement sur nouvelle autorisation.
+
+
+## Complément validé — identité Pro, négociation et remise (4 octobre 2026)
+- L’espace Pro utilise le logo et la couverture de la boutique active, fournis à l’inscription. Modifier cette photo dans le profil Pro met à jour le même logo public ; les coordonnées personnelles restent celles du compte.
+- Les trois clients web désactivent le rebond vertical aux limites de page. Direction A, logo, palette, composition et Hero sont conservés.
+- Le professionnel peut activer la négociation sur une annonce de vente (ou vente + location), désactivée par défaut. Le client propose un prix positif inférieur au prix public, dans sa devise. **Parcours choisi par le client : proposition séparée → acceptation/refus du vendeur → achat au prix accepté.**
+- Une proposition pending dure 24 h ; après acceptation, l’achat est possible pendant 24 h. Une seule proposition pending/accepted non expirée par client et véhicule. Accepter ne réserve pas le véhicule, ne crée ni vente ni paiement. Le serveur vérifie disponibilité, identité et version de l’annonce à l’achat ; une proposition utilisée ne peut pas être réutilisée, même après annulation.
+- Avant tout nouvel achat, le client choisit retrait personnel, retrait par personne mandatée ou demande de livraison par chauffeur. Nom/téléphone du contact et date/heure approximative sont requis. Livraison : ville et adresse/repère requis, position GPS facultative (permission uniquement sur clic). Les données sont privées et visibles dans le détail de vente du client et du professionnel autorisé.
+- Le rendez-vous est interprété dans le fuseau de la boutique, validé futur et conservé en UTC. Il reste à confirmer avec le professionnel. Ce lot collecte une demande de livraison : aucune affectation de chauffeur, aucun suivi GPS continu, aucune tarification ou promesse de livraison automatique. Paiements DEMO et états existants inchangés.
+
+
+## Phase 7 — reçus de démonstration (5 octobre 2026)
+Reçu de vente ou location après paiement DEMO réussi à la confirmation professionnelle. Une transaction payée → un reçu, données historiques immuables, aucune conversion. Consultation HTML, téléchargement PDF serveur et ouverture pour impression privés côté client et Pro. Contenu DEMO explicite, sans facture fiscale, TVA inventée, QR ni page publique. Annulation sans remboursement conserve le document historique. Le détail et les confirmations montrent les actions seulement lorsqu’un reçu existe.
