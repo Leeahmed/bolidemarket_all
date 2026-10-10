@@ -27,3 +27,7 @@ Les transactions réelles attendent les décisions de paiement, pays, conditions
 
 ## Phase 7 — livrée le 5 octobre 2026
 Reçus vente/location DEMO immuables, PDF local, lecture/téléchargement/impression privés client et Pro. Tests et rendu visuel vérifiés, voir CURRENT_STATUS et RECEIPTS. Phase 8 Flutter client à engager uniquement sur prochaine demande. Aucun QR, justificatif fiscal ou paiement réel.
+
+## Phase 8A — implémentation du 5 octobre 2026
+Client Flutter fondation/auth/marketplace/favoris/profil livré dans mobile-client sur la même API. Tests et intégration locaux dans CURRENT_STATUS ; compilation Android et essai sur appareil en attente du SDK absent. Phase 8A suivie comme PARTIAL tant que la validation native reste indisponible.
+Prochain travail : vérification Android (stockage, GPS, galerie), puis **8B — transactions mobiles : réservation, achat, reçus et realtime**, uniquement sur nouvelle autorisation. Aucun push/Firebase/chat ni client Pro mobile.

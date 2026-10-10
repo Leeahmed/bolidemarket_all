@@ -4,7 +4,7 @@
 Marketplace automobile multi-pays pour acheter ou louer auprès de professionnels. Branding et maquettes définitivement validés ; backend Laravel, authentification et catalogue avec recherche/proximité implémentés localement.
 
 ## Démarrage rapide
-Lire [AGENTS](AGENTS.md), [l'état courant](docs/CURRENT_STATUS.md) et [le cahier des charges](docs/MASTER_SPEC.md). Installation, comptes démo et tests : [README backend](backend-api/README.md). Landing Vue disponible : [lancement](landing-web/README.md). Marketplace publique Vue disponible : [lancement](marketplace-web/README.md). Backend 5B.1 livré : favoris, réservations et achats avec paiements DEMO uniquement. Espace client Vue 5B.2 livré : sessions, favoris et parcours DEMO. UX / PRODUCT POLISH 1 livré : profil éditable et avatar, mode démo, pays/téléphone/devise, refonte compte et auth, inscription professionnelle. Phase 6A livrée : [dashboard professionnel Vue](merchant-dashboard/README.md). Phase 6B livrée : [Reverb et synchronisation client/Pro](docs/REALTIME_TESTING.md). Phase 7 livrée : [reçus, PDF et impression privés](docs/RECEIPTS.md). Prochaine phase après autorisation : 8 — application mobile Flutter client.
+Lire [AGENTS](AGENTS.md), [l'état courant](docs/CURRENT_STATUS.md) et [le cahier des charges](docs/MASTER_SPEC.md). Installation, comptes démo et tests : [README backend](backend-api/README.md). Landing Vue disponible : [lancement](landing-web/README.md). Marketplace publique Vue disponible : [lancement](marketplace-web/README.md). Backend 5B.1 livré : favoris, réservations et achats avec paiements DEMO uniquement. Espace client Vue 5B.2 livré : sessions, favoris et parcours DEMO. UX / PRODUCT POLISH 1 livré : profil éditable et avatar, mode démo, pays/téléphone/devise, refonte compte et auth, inscription professionnelle. Phase 6A livrée : [dashboard professionnel Vue](merchant-dashboard/README.md). Phase 6B livrée : [Reverb et synchronisation client/Pro](docs/REALTIME_TESTING.md). Phase 7 livrée : [reçus, PDF et impression privés](docs/RECEIPTS.md). Client Flutter 8A implémenté : [installation et vérifications](mobile-client/README.md). Phase 8B : transactions DEMO, reçus/PDF et Reverb mobiles implémentés et testés ; [validation native restante](docs/MOBILE_TRANSACTION_TESTING.md) en attente du SDK Android.
 
 ## Workspace
 | Dossier | Rôle |
@@ -15,9 +15,9 @@ Lire [AGENTS](AGENTS.md), [l'état courant](docs/CURRENT_STATUS.md) et [le cahie
 | `landing-web/` | Landing Vue 3 disponible, API et animations intégrées |
 | `marketplace-web/` | Catalogue, recherche, détail et boutiques Vue disponibles (5A) |
 | `merchant-dashboard/` | Dashboard professionnel Vue : parc, photos, opérations DEMO, clients et boutique |
-| `mobile-client/` | Futur client Flutter |
+| `mobile-client/` | Client Flutter 8A/8B : auth, catalogue, profil, transactions DEMO, reçus et Reverb |
 
-Landing, marketplace client et dashboard professionnel sont implémentés ; mobile-client reste non commencé. Le backend utilise PHP XAMPP, Laravel 12, Sanctum et MariaDB via le pilote MySQL. Les anciens livrables et `branding logo/` sont préservés.
+Landing, marketplace client et dashboard professionnel sont implémentés ; mobile-client est implémenté en 8A/8B, avec tests Flutter et contrôles API/Reverb ; compilation/essais natifs encore non disponibles sur ce poste. Le backend utilise PHP XAMPP, Laravel 12, Sanctum et MariaDB via le pilote MySQL. Les anciens livrables et `branding logo/` sont préservés.
 
 ## Documents
 | Document | Source de vérité pour |

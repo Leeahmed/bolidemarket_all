@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-10T00:52:51.441847Z",
+  "environment": "local DEMO",
+  "checks": {
+    "demo_only": true,
+    "reverb_public_private_connected": true,
+    "availability_window": true,
+    "server_quote_4_days": true,
+    "reservation_pending": true,
+    "idempotent_replay": true,
+    "professional_sees_mobile_reservation": true,
+    "reservation_realtime_confirmed": true,
+    "demo_receipt_server_snapshot": true,
+    "authenticated_laravel_pdf": true,
+    "anonymous_pdf_denied": true,
+    "cancelled_and_dates_released": true,
+    "receipt_immutable_after_cancel": true,
+    "purchase_pending_handover": true,
+    "sale_not_sold_at_confirmation": true,
+    "vehicle_realtime_sold": true,
+    "order_realtime_fulfilled": true,
+    "private_histories_and_receipts": true,
+    "vehicle_price_http_reconciliation": true,
+    "unpublished_http_404": true,
+    "rest_when_socket_stopped": true,
+    "foreground_reconnection": true
+  },
+  "passed": 22,
+  "failed": 0,
+  "evidence": {
+    "reservation_id": "10",
+    "order_id": "16",
+    "rental_vehicle": "32",
+    "sale_vehicle": "33",
+    "receipt_reference": "BM-RCP-2026-01M4HMQKYEQEBPG56N8P4PWXDX"
+  },
+  "native_app_run": false,
+  "native_pdf_share_verified": false
+}

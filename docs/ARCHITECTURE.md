@@ -1,5 +1,5 @@
 # Architecture cible
-Statut : fondation backend, authentification, catalogue et transactions DEMO 5B.1 implémentés. Environnement local vérifié : PHP XAMPP 8.2.12, Composer local 2.10.3, Laravel 12.69.2, Sanctum 4.3.3, MariaDB XAMPP 10.4.32 avec pilote `mysql`. Aucun changement global PHP/XAMPP ; dépendances figées dans composer.lock. Landing Vue 3 livrée en phase 4 et marketplace publique en phase 5A ; espace client transactionnel Vue livré en 5B.2 avec sessions Sanctum SPA existantes. Dashboard Pro livré en 6A ; Flutter non démarré.
+Statut : fondation backend, authentification, catalogue et transactions DEMO 5B.1 implémentés. Environnement local vérifié : PHP XAMPP 8.2.12, Composer local 2.10.3, Laravel 12.69.2, Sanctum 4.3.3, MariaDB XAMPP 10.4.32 avec pilote `mysql`. Aucun changement global PHP/XAMPP ; dépendances figées dans composer.lock. Landing Vue 3 livrée en phase 4 et marketplace publique en phase 5A ; espace client transactionnel Vue livré en 5B.2 avec sessions Sanctum SPA existantes. Dashboard Pro livré en 6A ; client Flutter 8A implémenté, validation native en attente du SDK Android.
 
 ## Commerce DEMO — phase 5B.1 livrée
 `Services/Commerce` centralise AvailabilityService, ReservationService, OrderService, DemoPaymentService, IdempotencyService et CommerceAudit. Contrôleurs, Form Requests, enums, Policies et Resources réutilisent Sanctum, les comptes et les memberships existants. Les historiques privés sont limités au client ou au professionnel propriétaire ; le calendrier public n'expose aucune identité client.
@@ -99,3 +99,14 @@ ReceiptService appelé par DemoPaymentService dans la transaction métier exista
 ReceiptPdfService sépare rendu Blade/DomPDF du métier ; génération synchrone à la demande dans ce lot, sans cache/queue/service externe. Données échappées, assets locaux, accès distant/PHP/JS du moteur désactivés. Le PDF n’est jamais stocké publiquement.
 
 Composants Vue partagés web-shared/ReceiptDocument, ReceiptActions et ReceiptsBrowser ; services HTTP et auth existants injectés par chaque SPA. Vue dédupliqué dans Vite. Listes/détails/confirmation utilisent REST, les événements commerciaux existants déclenchent les relectures. Contrats : [RECEIPTS](RECEIPTS.md).
+
+## Mobile client — phase 8A
+Flutter stable 3.47.6/Dart 3.13.5, Riverpod 2.6, Dio unique et GoRouter ; dépendances verrouillées. Organisation par features, repositories fins, controllers et AsyncValue assemblés dans core/providers, widgets partagés. Thème central, Inter/Sora locales, assets raster officiels ; aucun nouveau logo ni nouvelle photographie.
+
+Auth Bearer sur le contrat Sanctum existant, restauration /auth/me et token flutter_secure_storage, onboarding seul dans SharedPreferences. Interceptor invalide uniquement un 401 du jeton courant ; erreurs réseau/JSON et réponses de sessions anciennes ne détruisent pas une nouvelle session. Routes privées gardées ; inscription client, E.164 via métadonnées téléphoniques et marchés API ; mode démo/vérification décidés serveur.
+
+Recherche et home utilisent le même contexte de localisation : choix manuel/GPS explicite, sinon profil puis app-config. Filtres/prix/tris selon API ; budgets majeurs vers minor units BigInt, aucune conversion. Pagination avec exclusion des doubles chargements, états et retry. Favoris CRUD et profil/avatar réutilisent leurs endpoints. Résumé compte en lecture seule ; aucune mutation commerciale, PDF, Reverb, push ou Pro mobile en 8A.
+
+Android/iOS com.bolidemarket.client ; Android minimum Flutter (24 sur ce SDK), iOS 15. Icones et splash Carbon générés depuis les assets validés. Permission localisation au premier plan sur clic, galerie seule. HTTP de développement autorisé uniquement dans Android debug / iOS Debug ; production APP_ENV exige une URL HTTPS. Backup Android désactivé pour ne pas exporter le stockage du jeton.
+
+Installation, configuration réseau emulator/LAN, tests, limitations natives : [README mobile](../mobile-client/README.md). Pas de changement au backend ni aux contrats API/DB ; 8B reste séparée.

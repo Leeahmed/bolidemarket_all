@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "register_login_bearer_me": true,
+    "countries": true,
+    "home_catalogue": true,
+    "vehicle_detail": true,
+    "shop_detail_catalogue": true,
+    "search_filters_sort": true,
+    "geographic_query": true,
+    "favorite_add_list": true,
+    "favorite_remove": true,
+    "profile_update_e164": true,
+    "avatar_upload": true,
+    "account_overview": true,
+    "logout_revoked": true
+  },
+  "passed": 13,
+  "failed": 0,
+  "synthetic_account_created": true,
+  "transactions_created": 0
+}

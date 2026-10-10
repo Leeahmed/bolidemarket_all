@@ -109,3 +109,6 @@ Les liens Pro/marketplace partagent la session locale et permettent toujours de 
 
 ## Phase 7 — reçus de démonstration (5 octobre 2026)
 Reçu de vente ou location après paiement DEMO réussi à la confirmation professionnelle. Une transaction payée → un reçu, données historiques immuables, aucune conversion. Consultation HTML, téléchargement PDF serveur et ouverture pour impression privés côté client et Pro. Contenu DEMO explicite, sans facture fiscale, TVA inventée, QR ni page publique. Annulation sans remboursement conserve le document historique. Le détail et les confirmations montrent les actions seulement lorsqu’un reçu existe.
+
+## Phase 8A — client mobile (5 octobre 2026)
+Onboarding bref, inscription client, connexion/restauration/déconnexion, exploration automobile, choix de localisation, filtres/tris, véhicule, boutique, favoris et profil/avatar sur les endpoints existants. Données/prix/statuts serveur, aucune conversion. Compte inclut ses résumés en lecture seule et conserve un accès permanent au marché. Acheter/Réserver et les routes historiques transactionnelles sont préparés avec message explicite ; aucune transaction mobile, paiement, reçu ou temps réel n’est activé dans ce lot. Validation native à compléter sur appareil avant le lot 8B.
