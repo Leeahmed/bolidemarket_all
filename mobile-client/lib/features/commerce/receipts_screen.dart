@@ -31,14 +31,15 @@ class _ReceiptActionsState extends ConsumerState<ReceiptActions> {
       if (!mounted) return;
       if (share) {
         await files.share(file, origin);
+        if (mounted && files.shareMessage != null) {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(files.shareMessage!)));
+        }
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text(
-              'PDF téléchargé dans les documents privés de l’application. Utilisez Partager pour l’exporter ou l’imprimer.',
-            ),
-          ),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(files.downloadMessage)));
       }
     } catch (e) {
       if (mounted) showError(context, e);

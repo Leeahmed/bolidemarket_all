@@ -5,11 +5,19 @@ import 'core/api.dart';
 import 'core/router.dart';
 import 'core/theme.dart';
 import 'features/realtime/gate.dart';
+import 'features/dev_preview/config.dart';
+import 'features/dev_preview/providers.dart';
+import 'features/dev_preview/gallery.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   AppConfig.validate();
-  runApp(const ProviderScope(child: BolideMarketApp()));
+  runApp(
+    ProviderScope(
+      overrides: visualDemoEnabled ? visualDemoOverrides() : const [],
+      child: const BolideMarketApp(),
+    ),
+  );
 }
 
 class BolideMarketApp extends ConsumerWidget {
@@ -19,7 +27,9 @@ class BolideMarketApp extends ConsumerWidget {
     title: 'BolideMarket',
     debugShowCheckedModeBanner: false,
     scaffoldMessengerKey: appMessengerKey,
-    builder: (_, child) => RealtimeGate(child: child!),
+    builder: (_, child) => visualDemoEnabled
+        ? VisualDemoFrame(child: RealtimeGate(child: child!))
+        : RealtimeGate(child: child!),
     theme: appTheme(),
     locale: const Locale('fr'),
     supportedLocales: const [Locale('fr')],

@@ -17,7 +17,7 @@ class Vehicle extends Model
 
     public bool $wasPublicForBroadcast = false;
 
-    protected $guarded = ['id', 'reference', 'slug', 'publication_status', 'inventory_status', 'published_at', 'version', 'is_demo', 'is_featured', 'is_certified'];
+    protected $guarded = ['id', 'reference', 'slug', 'publication_status', 'inventory_status', 'published_at', 'version', 'is_demo', 'is_featured', 'is_certified', 'moderation_status'];
 
     protected $casts = [
         'fuel' => FuelType::class, 'transmission' => Transmission::class, 'condition' => VehicleCondition::class,
@@ -80,6 +80,7 @@ class Vehicle extends Model
     public function scopePubliclyVisible(Builder $query): void
     {
         $query->where('publication_status', PublicationStatus::PUBLISHED)
+            ->where('moderation_status', '!=', 'suspended')
             ->whereNotNull('published_at')->where('published_at', '<=', now())
             ->whereHas('shop', fn ($q) => $q->publiclyVisible())
             ->whereHas('currency', fn ($q) => $q->where('active', true))

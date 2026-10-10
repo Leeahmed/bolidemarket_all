@@ -6,7 +6,8 @@ import '../../core/theme.dart';
 import '../../shared/widgets.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({super.key, this.startAutomatically = true});
+  final bool startAutomatically;
   @override
   ConsumerState<SplashScreen> createState() => _SplashScreenState();
 }
@@ -15,7 +16,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(start);
+    if (widget.startAutomatically) Future.microtask(start);
   }
 
   Future<void> start() async {

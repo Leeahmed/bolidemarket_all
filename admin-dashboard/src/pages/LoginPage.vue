@@ -1,0 +1,9 @@
+<script setup>
+import { ref } from 'vue'
+import { useRoute,useRouter } from 'vue-router'
+import { auth,login,restoreAuth,safeDestination } from '../stores/auth'
+const fields=ref({email:'',password:''}),busy=ref(false),error=ref(null),route=useRoute(),router=useRouter()
+async function submit(){if(busy.value)return;busy.value=true;error.value=null;try{await login(fields.value);fields.value.password='';await router.replace(auth.user.role==='admin'?safeDestination(route.query.redirect):'/forbidden')}catch(e){error.value=e}finally{busy.value=false}}
+async function retry(){await restoreAuth(true);if(auth.user)router.replace('/dashboard')}
+</script>
+<template><main class="login"><section class="login-brand"><img src="/images/logo-horizontal.webp" alt="BolideMarket"><span class="eyebrow">Administration</span><h1>Une vision globale.<br>Des décisions maîtrisées.</h1><p>Supervision des comptes, du catalogue et des transactions de la plateforme.</p><small>Accès réservé aux administrateurs autorisés.</small></section><section class="login-panel"><form @submit.prevent="submit"><span class="eyebrow">Espace administrateur</span><h2>Connexion</h2><p>Utilisez votre compte ADMIN.</p><div v-if="auth.error" class="error" role="alert"><p>{{ auth.error.message }}</p><button type="button" class="secondary" @click="retry">Rétablir la session</button></div><label for="email">E-mail</label><input id="email" v-model="fields.email" type="email" autocomplete="username" required maxlength="254"><label for="password">Mot de passe</label><input id="password" v-model="fields.password" type="password" autocomplete="current-password" required><p v-if="error" class="error" role="alert">{{ error.fields?.email?.[0] || error.message }}</p><button :disabled="busy">{{ busy?'Connexion…':'Se connecter' }}</button><small>Aucune inscription publique ADMIN.</small></form></section></main></template>

@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'providers.dart';
 import 'models.dart';
+import '../features/dev_preview/config.dart';
+import '../features/dev_preview/gallery.dart';
 import '../features/auth/auth_screen.dart';
 import '../features/splash/splash_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
@@ -20,12 +22,15 @@ final routerProvider = Provider<GoRouter>((ref) {
   final refresh = ValueNotifier(0);
   ref.listen(authProvider, (_, _) => refresh.value++);
   final router = GoRouter(
-    initialLocation: '/splash',
+    initialLocation: visualDemoEnabled ? '/dev-preview' : '/splash',
     refreshListenable: refresh,
     redirect: (_, state) {
       final protected =
           state.uri.path.startsWith('/account') ||
           state.uri.path == '/profile' ||
+          (visualDemoEnabled &&
+              (state.uri.path.startsWith('/dev-preview/rental/') ||
+                  state.uri.path.startsWith('/dev-preview/sale/'))) ||
           state.uri.path.startsWith('/reservation-confirmation/') ||
           state.uri.path.startsWith('/order-confirmation/') ||
           (state.uri.path.startsWith('/vehicle/') &&
@@ -38,6 +43,29 @@ final routerProvider = Provider<GoRouter>((ref) {
       return null;
     },
     routes: [
+      if (visualDemoEnabled) ...[
+        GoRoute(
+          path: '/dev-preview',
+          builder: (_, _) => const DevPreviewGallery(),
+        ),
+        GoRoute(
+          path: '/dev-preview/splash',
+          builder: (_, _) => const SplashScreen(startAutomatically: false),
+        ),
+        GoRoute(
+          path: '/dev-preview/filters',
+          builder: (_, _) => const PreviewFiltersScreen(),
+        ),
+        GoRoute(
+          path: '/dev-preview/:kind/:step',
+          builder: (_, state) => PreviewWorkflowScreen(
+            rental: state.pathParameters['kind'] == 'rental',
+            step:
+                int.tryParse(state.pathParameters['step'] ?? '')?.clamp(0, 2) ??
+                0,
+          ),
+        ),
+      ],
       GoRoute(path: '/', redirect: (_, _) => '/home'),
       GoRoute(path: '/splash', builder: (_, _) => const SplashScreen()),
       GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),

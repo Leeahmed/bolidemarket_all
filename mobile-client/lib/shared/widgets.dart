@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -35,12 +36,23 @@ class SafePhoto extends StatelessWidget {
         size: 48,
       ),
     );
-    if (asset != null) {
+    if (asset != null || url.startsWith('assets/')) {
       return Image.asset(
-        asset!,
+        asset ?? url,
         fit: fit,
         errorBuilder: (_, _, _) => placeholder(),
       );
+    }
+    if (url.startsWith('data:image/')) {
+      try {
+        return Image.memory(
+          base64Decode(url.split(',').last),
+          fit: fit,
+          errorBuilder: (_, _, _) => placeholder(),
+        );
+      } catch (_) {
+        return placeholder();
+      }
     }
     if (url.isEmpty || url.toLowerCase().endsWith('.svg')) return placeholder();
     return CachedNetworkImage(

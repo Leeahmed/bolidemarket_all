@@ -97,3 +97,27 @@ Appareil physique : remplacer les deux hôtes par l'IP LAN du PC et rendre les s
 Le helper tool/android.ps1 accepte maintenant ReverbAppKey, ReverbHost, ReverbPort et le switch ReverbTls, en plus de ApiBaseUrl/DeviceId. Exemple après disponibilité du SDK : ./tool/android.ps1 -Action run -ReverbAppKey CLE_PUBLIQUE_LOCALE -ReverbHost 10.0.2.2. Sans clé publique, le transport reste désactivé et REST fonctionne.
 
 État vérifié : flutter analyze PASS, 88 tests PASS, 22 contrôles API/Reverb réels PASS. APK **NOT AVAILABLE** (SDK absent), partage Android et parcours sur appareil non vérifiés. Plan, preuves et cinq scénarios natifs restants : [MOBILE_TRANSACTION_TESTING](../docs/MOBILE_TRANSACTION_TESTING.md). Captures 8B en français : test/goldens/8b-*.png (horloge fixe, photos officielles DEMO). Aucun changement aux trois clients Vue, backend, logo ou Hero.
+
+## VISUAL QA
+
+Contrôle permanent des vrais écrans et composants, sans Laravel, uniquement en debug/development. La galerie `/dev-preview` permet Guest / Client connecté et l’accès aux étapes de réservation/achat/reçu ; un petit bouton ramène à la galerie depuis chaque écran. Données fictives en mémoire, aucune transaction réelle. `VISUAL_DEMO=false` conserve les repositories API et le comportement existants ; release/profile ne peuvent pas activer le bypass.
+
+```powershell
+flutter run -d chrome --web-port=5176 --dart-define=VISUAL_DEMO=true
+# Compatibilité vérifiée sur ce poste (Flutter 3.47.6 / Chrome 155, timeout du nouveau DDC) :
+flutter run -d chrome --web-port=5176 --dart-define=VISUAL_DEMO=true --no-web-experimental-hot-reload
+
+flutter devices
+flutter emulators
+flutter emulators --launch <id>
+flutter run -d <device-id> --dart-define=VISUAL_DEMO=true
+
+flutter test test/preview_routes_test.dart --dart-define=VISUAL_DEMO=true
+flutter build web
+# Pour un export de QA local (release désactive toujours la démo) :
+flutter build web --debug --dart-define=VISUAL_DEMO=true
+```
+
+Sur ce poste, appeler Flutter via `& ../.tools/flutter/bin/flutter.bat` si le PATH n’est pas configuré. Aperçu : http://localhost:5176/#/dev-preview. Le Web utilise le téléchargement navigateur comme repli PDF ; les services Android/iOS existants sont conservés. SDK/émulateur Android actuellement indisponibles.
+
+Avant de clore toute phase mobile, parcourir la [checklist VISUAL QA](../docs/MOBILE_VISUAL_QA.md) et contrôler 390 × 844, 360 × 800 et 430 × 932. Captures réelles : [docs/screenshots/mobile](../docs/screenshots/mobile/).

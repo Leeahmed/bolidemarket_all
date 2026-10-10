@@ -1,0 +1,16 @@
+{
+  "name": "BolideMarket",
+  "short_name": "BolideMarket",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0B0D0F",
+  "theme_color": "#0B0D0F",
+  "description": "Achetez. Louez. Roulez.",
+  "icons": [
+    {
+      "src": "icons/app-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

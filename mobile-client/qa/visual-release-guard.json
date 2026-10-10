@@ -1,0 +1,7 @@
+{
+  "requested_flag": true,
+  "build": "release",
+  "djak_embedded": false,
+  "gallery_embedded": false,
+  "bypass_label_embedded": false
+}

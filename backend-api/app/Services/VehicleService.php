@@ -96,6 +96,9 @@ class VehicleService
 
     public function assertEditable(Vehicle $vehicle): void
     {
+        if ($vehicle->moderation_status === 'suspended') {
+            throw ValidationException::withMessages(['publication_status' => ['Annonce suspendue : intervention administrative requise.']]);
+        }
         app(AvailabilityService::class)->assertEditable($vehicle);
         if (in_array($vehicle->inventory_status, [InventoryStatus::RENTED, InventoryStatus::SOLD], true)) {
             throw ValidationException::withMessages(['inventory_status' => ['Les états loué/vendu sont gérés par les parcours de location et de vente.']]);
@@ -104,7 +107,7 @@ class VehicleService
 
     public function assertPublishable(Vehicle $vehicle): void
     {
-        if (! Shop::publiclyVisible()->whereKey($vehicle->shop_id)->exists()
+        if ($vehicle->moderation_status === 'suspended' || ! Shop::publiclyVisible()->whereKey($vehicle->shop_id)->exists()
             || ! $vehicle->images()->where('position', 0)->exists()
             || (! $vehicle->is_for_sale && ! $vehicle->is_for_rent)
             || ($vehicle->is_for_sale && (int) $vehicle->sale_price_minor <= 0)

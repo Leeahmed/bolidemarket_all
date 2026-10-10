@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AvailabilityController;
 use App\Http\Controllers\CatalogController;
@@ -18,10 +19,29 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\VerificationController;
+use App\Services\AdminReadService;
 use App\Support\DemoMode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
+
+Route::prefix('admin')->middleware(['auth:sanctum', 'active', 'role:admin'])->group(function () {
+    Route::get('dashboard', [AdminController::class, 'dashboard']);
+    Route::get('reports', [AdminController::class, 'dashboard']);
+    Route::get('settings', [AdminController::class, 'settings']);
+    Route::get('lookup', [AdminController::class, 'lookup']);
+    Route::get('search', [AdminController::class, 'search'])->middleware('throttle:60,1');
+    Route::get('receipts/{id}/pdf', [AdminController::class, 'pdf'])->middleware('throttle:30,1');
+    foreach (AdminReadService::TYPES as $type) {
+        Route::get($type, [AdminController::class, 'index'])->defaults('type', $type);
+        if ($type !== 'activity') {
+            Route::get($type.'/{id}', [AdminController::class, 'show'])->defaults('type', $type);
+        }
+        if (in_array($type, ['users', 'merchants', 'shops', 'vehicles'])) {
+            Route::post($type.'/{id}/actions', [AdminController::class, 'action'])->defaults('type', $type)->middleware('throttle:30,1');
+        }
+    }
+});
 
 Route::post('broadcasting/auth', fn (Request $request) => Broadcast::auth($request))->middleware(['auth:sanctum', 'active']);
 

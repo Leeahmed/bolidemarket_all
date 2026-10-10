@@ -14,7 +14,13 @@ import 'providers.dart';
 import 'widgets.dart';
 
 class CommerceWorkflowScreen extends ConsumerStatefulWidget {
-  const CommerceWorkflowScreen(this.slug, {super.key, required this.rental});
+  const CommerceWorkflowScreen(
+    this.slug, {
+    super.key,
+    required this.rental,
+    this.initialDraft,
+  });
+  final Json? initialDraft;
   final String slug;
   final bool rental;
   @override
@@ -44,6 +50,15 @@ class _WorkflowState extends ConsumerState<CommerceWorkflowScreen> {
     final user = ref.read(authProvider).valueOrNull;
     name.text = user?.name ?? '';
     phone.text = text(user?.json['phone']);
+    final draft = widget.initialDraft;
+    if (draft != null) {
+      step = draft['step'] as int? ?? 0;
+      start = draft['start'] as DateTime?;
+      end = draft['end'] as DateTime?;
+      quote = draft['quote'] as Json?;
+      meeting = draft['meeting'] as DateTime?;
+      hour = draft['hour'] as TimeOfDay?;
+    }
   }
 
   @override

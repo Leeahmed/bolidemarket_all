@@ -1,0 +1,89 @@
+{
+  "mode": "debug/development",
+  "normal_tests": 95,
+  "preview_route_tests": 5,
+  "distinct_tests": 100,
+  "failures": 0,
+  "analyze": "PASS",
+  "web_release_build": "PASS",
+  "release_guard": "PASS",
+  "chrome": "PASS with --no-web-experimental-hot-reload (Flutter 3.47.6 / Chrome 155)",
+  "android": "NOT AVAILABLE",
+  "native_sdk": "absent",
+  "phase_9_started": false,
+  "preserved": {
+    "docs/HERO_VIDEO_BRIEF.md": true,
+    "landing-web/src/App.vue": true,
+    "landing-web/src/components/HeroSection.vue": true,
+    "docs/references/logo-final.png": true
+  },
+  "browser_rental_flow": "dates → summary → demo payment → confirmation → receipt PASS, 135000 XOF",
+  "web_pdf_feedback": "PASS",
+  "web_pdf_download_event": "Not exposed by in-app browser; physical Chrome file verification pending",
+  "screenshot_browser": "Codex in-app Chromium; same Flutter server launched with Chrome",
+  "screenshots": [
+    {
+      "name": "account-390.jpg",
+      "size": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "home-360.jpg",
+      "size": [
+        360,
+        800
+      ]
+    },
+    {
+      "name": "home-390.jpg",
+      "size": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "home-430.jpg",
+      "size": [
+        430,
+        932
+      ]
+    },
+    {
+      "name": "marketplace-390.jpg",
+      "size": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "receipt-390.jpg",
+      "size": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "receipt-total-390.jpg",
+      "size": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "reservation-390.jpg",
+      "size": [
+        390,
+        844
+      ]
+    },
+    {
+      "name": "vehicle-sale-390.jpg",
+      "size": [
+        390,
+        844
+      ]
+    }
+  ]
+}
